@@ -19,7 +19,9 @@ HTML
 CSS
 Live Demo
 
-Visit the website. The main page is opened through index.html.
+Visit the website. https://tsunamia9.github.io/tennis-website/
+
+The website is published using GitHub Pages. The link opens the main index.html page automatically.
 
 Background
 
