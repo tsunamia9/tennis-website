@@ -1983,3 +1983,160 @@ div.flex_fixed {
         font-size: 13px;
     }
 }
+/* ================================
+   YHTEINEN HEADER
+================================ */
+
+.site-header {
+    width: 100%;
+    background: rgba(5, 20, 16, 0.97);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 100;
+}
+
+.header-inner {
+    max-width: 1200px;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 0 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+
+/* LOGO */
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 21px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.site-logo:first-letter {
+    font-size: 27px;
+}
+
+.site-logo b {
+    color: #d9ff4f;
+}
+
+
+/* NAVIGAATIO */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+}
+
+.main-nav a {
+    position: relative;
+
+    color: #e9eee9;
+    text-decoration: none;
+
+    padding: 12px 14px;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+}
+
+
+/* AKTIIVINEN SIVU */
+
+.main-nav a.active {
+    color: #06140f;
+    background: #d9ff4f;
+    font-weight: 700;
+}
+
+
+/* ALAVIIVA HOVERISSA */
+
+.main-nav a:not(.active)::after {
+    content: "";
+
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 6px;
+
+    height: 2px;
+
+    background: #d9ff4f;
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition: transform 0.2s ease;
+}
+
+.main-nav a:not(.active):hover::after {
+    transform: scaleX(1);
+}
+
+
+/* ================================
+   MOBIILI
+================================ */
+
+@media (max-width: 900px) {
+
+    .header-inner {
+        padding: 18px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .main-nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .main-nav a {
+        font-size: 14px;
+        padding: 9px 11px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .main-nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+
+    .main-nav a {
+        text-align: center;
+    }
+
+}
