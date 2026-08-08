@@ -3,13 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="author" content="Jaakko Linnamaa">
-
-    <meta name="description"
-          content="Tennis 4 Life – tietoa tenniksestä, tenniskentistä ja tenniksen harrastamisesta.">
+    <meta name="description" content="Tennis 4 Life – tietoa tenniksestä ja tenniksen eri puolista.">
 
     <title>Tennis yleisesti | Tennis 4 Life</title>
 
@@ -17,104 +14,72 @@
 </head>
 
 
-<body>
+<body class="inner-page">
 
 
-<!-- =====================================================
+<!-- =========================
      YLÄOSA
-     ===================================================== -->
+     ========================= -->
 
-<header class="site-header">
+<header class="inner-header">
 
+    <div class="inner-search">
 
-    <!-- Hakupalkki -->
+        <span class="search-icon">⌕</span>
 
-    <div class="search-area">
+        <input
+            type="text"
+            placeholder="Etsi sivustolta..."
+            aria-label="Etsi sivustolta"
+        >
 
-        <div class="search-box">
-
-            <span class="search-symbol">⌕</span>
-
-            <input
-                class="search"
-                type="text"
-                placeholder="Etsi sivustolta..."
-                aria-label="Etsi sivustolta"
-            >
-
-            <span class="clear-symbol">×</span>
-
-        </div>
+        <span class="search-clear">×</span>
 
     </div>
 
 
-    <!-- Tennis 4 Life -->
-
-    <div class="site-title">
-
-        <span class="title-tennis">
-            Tennis
-        </span>
-
-        <span class="title-four">
-            4
-        </span>
-
-        <span class="title-life">
-            Life
-        </span>
-
+    <div class="inner-logo">
+        Tennis <span>4</span> Life
     </div>
 
 
-    <div class="title-subtitle">
-        🎾 TENNIS • PASSION • LIFE 🎾
+    <div class="inner-subtitle">
+        TENNIS • PASSION • LIFE
     </div>
-
 
 </header>
 
 
 
-<!-- =====================================================
-     VASEN SIVUVALIKKO
-     ===================================================== -->
+<!-- =========================
+     SIVUVALIKKO
+     ========================= -->
 
-<aside class="side-menu">
+<aside class="inner-side-menu">
 
-    <div class="side-menu-title">
-        🎾 NAVIGOINTI
+    <div class="side-heading">
+        🎾 VALIKKO
     </div>
-
 
     <a href="index.html">
         Etusivu
     </a>
 
-
-    <a
-        href="yleisesti.html"
-        class="active"
-    >
+    <a href="yleisesti.html" class="current">
         Tennis yleisesti
     </a>
-
 
     <a href="minajatennis.html">
         Minä & tennis
     </a>
 
-
     <a href="suosittelen.html">
         Miksi suosittelen?
     </a>
 
-
     <a href="kilpailut.html">
         Kilpailut & tapahtumat
     </a>
-
 
     <a href="linkkeja.html">
         Linkkejä
@@ -124,84 +89,84 @@
 
 
 
-<!-- =====================================================
+<!-- =========================
      PÄÄSISÄLTÖ
-     ===================================================== -->
+     ========================= -->
 
-<main class="main-content">
-
-
-    <h1>
-        Tennis yleisesti
-    </h1>
+<main class="inner-main">
 
 
-    <!-- Johdanto -->
+    <div class="page-heading">
 
-    <section class="content-card">
+        <span>🎾</span>
 
-        <div class="card-label">
-            🎾 PERUSTIETOA TENNIKSESTÄ
+        <h1>
+            Tennis yleisesti
+        </h1>
+
+        <span>🎾</span>
+
+    </div>
+
+
+
+    <!-- INTRO -->
+
+    <section class="info-card">
+
+        <div class="small-heading">
+            TENNIKSEN PERUSTEET
         </div>
 
-
         <h2>
-            Tennis – vauhtia, taitoa ja taktiikkaa
+            Mitä tennis oikein on?
         </h2>
-
 
         <p>
             Tennis on mailapeli, jota voidaan pelata joko
-            kaksinpelinä tai nelinpelinä. Pelin tavoitteena
-            on lyödä pallo vastustajan kenttäpuolelle siten,
+            kaksinpelinä tai nelinpelinä. Pelaajat lyövät
+            palloa mailalla verkon yli ja tavoitteena on
+            saada pallo vastustajan kenttäpuolelle niin,
             ettei vastustaja pysty palauttamaan sitä sääntöjen
             mukaisesti.
         </p>
 
-
         <p>
-            Tennis on laji, jossa yhdistyvät nopeus,
-            kestävyys, tarkkuus ja taktinen ajattelu.
-            Jokainen piste on erilainen ja ottelun kulku
-            voi muuttua nopeasti.
+            Tenniksessä yhdistyvät nopeus, kestävyys,
+            tarkkuus, tekniikka ja taktinen ajattelu.
+            Laji sopii hyvin sekä kilpailulliseen pelaamiseen
+            että rennoksi harrastukseksi.
         </p>
 
     </section>
 
 
 
-    <!-- =================================================
-         TENNISKENTÄT
-         ================================================= -->
+    <!-- KUVA -->
 
-    <section class="content-card">
+    <section class="info-card">
 
-        <div class="card-label">
-            🎾 TENNISKENTÄT
+        <div class="small-heading">
+            TENNISKENTTÄ
         </div>
 
-
         <h2>
-            Erilaiset tenniskentät
+            Kenttä vaikuttaa peliin
         </h2>
 
 
-        <div class="tennis-image-card">
+        <div class="main-image-box">
 
             <img
                 src="tenniskuvia/tenniskentta.jpg"
                 alt="Sininen tenniskenttä"
-                class="big-tennis-image"
             >
 
+            <div class="image-caption">
+                US Openin kova-alustainen kenttä on sinisen värinen.
+            </div>
 
-            <p class="image-caption">
-                US Openin kova-alustainen kenttä on
-                sinisen värinen.
-            </p>
-
-
-            <p class="image-source">
+            <div class="image-source">
                 Kuva:
                 <a
                     href="https://www.pixabay.com"
@@ -210,28 +175,41 @@
                 >
                     Pixabay
                 </a>
-            </p>
+            </div>
 
         </div>
 
 
         <p>
-            Tennistä pelataan useilla erilaisilla alustoilla.
-            Tunnetuimpia ovat kova alusta, massakenttä ja
-            nurmikenttä. Kentän pinta vaikuttaa siihen,
-            kuinka nopeasti pallo liikkuu ja miten se pomppaa.
+            Tennistä pelataan erilaisilla kenttäalustoilla.
+            Yleisimmät ovat kova alusta, massa ja nurmi.
+            Jokainen alusta muuttaa hieman pallon nopeutta,
+            pomppua ja pelin rytmiä.
         </p>
 
+    </section>
 
 
-        <!-- Kenttätyypit -->
+
+    <!-- KENTTÄTYYPIT -->
+
+    <section class="info-card">
+
+        <div class="small-heading">
+            KENTTÄTYYPIT
+        </div>
+
+        <h2>
+            Kolme tunnettua alustaa
+        </h2>
+
 
         <div class="court-grid">
 
 
-            <div class="court-box">
+            <article class="court">
 
-                <div class="court-icon">
+                <div class="court-top blue">
                     🔵
                 </div>
 
@@ -240,19 +218,18 @@
                 </h3>
 
                 <p>
-                    Kova-alustaiset kentät ovat yleisiä
-                    ammattilaistenniksessä. Pallo pomppaa
-                    melko ennakoitavasti ja peli voi olla
-                    nopeaa.
+                    Kova alusta on yleinen ammattilaistenniksessä.
+                    Pallo pomppaa melko tasaisesti ja peli voi
+                    olla nopeaa.
                 </p>
 
-            </div>
+            </article>
 
 
 
-            <div class="court-box">
+            <article class="court">
 
-                <div class="court-icon">
+                <div class="court-top orange">
                     🟠
                 </div>
 
@@ -261,18 +238,18 @@
                 </h3>
 
                 <p>
-                    Massakentällä pallo pomppaa yleensä
-                    korkeammalle ja peli on usein hieman
-                    hitaampaa. Pitkät pallorallit ovat yleisiä.
+                    Massakentällä peli on usein hitaampaa ja
+                    pallorallit voivat venyä pitkiksi.
+                    Massa antaa pelaajalle paljon aikaa valmistautua.
                 </p>
 
-            </div>
+            </article>
 
 
 
-            <div class="court-box">
+            <article class="court">
 
-                <div class="court-icon">
+                <div class="court-top green">
                     🟢
                 </div>
 
@@ -281,25 +258,24 @@
                 </h3>
 
                 <p>
-                    Nurmikentällä peli on usein nopeaa ja
-                    pallon pomppu matalampi. Wimbledon tunnetaan
-                    erityisesti nurmikentästään.
+                    Nurmikentällä pallo liikkuu nopeasti ja
+                    pomppu jää yleensä matalammaksi.
+                    Wimbledon on tunnettu nurmikentistään.
                 </p>
 
-            </div>
+            </article>
 
 
         </div>
 
 
-
         <a
-            class="big-button"
+            class="yellow-button"
             href="https://www.ertheo.com/blog/en/type-tennis-courts/"
             target="_blank"
             rel="noopener noreferrer"
         >
-            Tutustu eri kenttätyyppeihin
+            Lue lisää kenttätyypeistä
             <span>→</span>
         </a>
 
@@ -307,78 +283,66 @@
 
 
 
-    <!-- =================================================
-         MIKÄ TEKEE TENNIKSESTÄ KIINNOSTAVAA
-         ================================================= -->
+    <!-- MIKSI TENNIS -->
 
-    <section class="content-card highlight-card">
+    <section class="info-card special-card">
 
-        <div class="card-label">
-            💚 TENNIS 4 LIFE
+        <div class="small-heading">
+            TENNIS 4 LIFE
         </div>
 
-
         <h2>
-            Mikä tekee tenniksestä kiinnostavaa?
+            Tennis on enemmän kuin pelkkä peli
         </h2>
 
+        <p>
+            Tenniksessä jokainen piste on uusi tilaisuus.
+            Pelaajan täytyy ajatella jatkuvasti, miten
+            seuraavan pallon pelaa ja milloin kannattaa
+            hyökätä tai puolustaa.
+        </p>
 
         <p>
-            Tenniksessä jokainen piste on oma pieni
-            taistelunsa. Pelaajan täytyy miettiä,
-            mihin pallon lyö, millä voimalla ja milloin
-            kannattaa hyökätä.
+            Juuri tämä tekee lajista kiinnostavan:
+            koskaan ei voi tietää etukäteen, miten seuraava
+            piste tai koko ottelu tulee päättymään.
         </p>
 
 
-        <p>
-            Ottelun aikana tilanne voi muuttua nopeasti.
-            Pelaaja voi olla yhden hetken vaikeuksissa ja
-            seuraavassa hetkessä hallita peliä täysin.
-        </p>
-
-
-        <div class="quote">
-            ”Tenniksessä seuraava piste on aina uusi mahdollisuus.”
+        <div class="tennis-quote">
+            “Seuraava piste on aina uusi mahdollisuus.”
         </div>
 
     </section>
 
 
 
-    <!-- =================================================
-         MUUT SIVUT
-         ================================================= -->
+    <!-- MUUT SIVUT -->
 
-    <section class="content-card">
+    <section class="info-card">
 
-        <div class="card-label">
-            🎾 TUTUSTU SIVUSTOON
+        <div class="small-heading">
+            TUTUSTU SIVUSTOON
         </div>
 
-
         <h2>
-            Tutustu myös muihin sivuihin
+            Löydä lisää
         </h2>
 
 
-        <div class="page-buttons">
-
+        <div class="other-pages">
 
             <a href="minajatennis.html">
                 Minä & tennis
             </a>
 
-
             <a href="suosittelen.html">
                 Miksi suosittelen?
             </a>
 
-
             <a href="kilpailut.html">
                 Kilpailut & tapahtumat
             </a>
-
 
         </div>
 
@@ -389,60 +353,39 @@
 
 
 
-<!-- =====================================================
+<!-- =========================
      FOOTER
-     ===================================================== -->
+     ========================= -->
 
-<footer class="site-footer">
+<footer class="inner-footer">
 
+    <div class="footer-buttons">
 
-    <div class="footer-links">
-
-
-        <a
-            class="foots"
-            href="condition.html"
-        >
+        <a href="condition.html">
             Condition of use
         </a>
 
-
-        <a
-            class="foots"
-            href="privacy.html"
-        >
+        <a href="privacy.html">
             Privacy policy
         </a>
 
-
-        <a
-            class="foots"
-            href="contact.html"
-        >
+        <a href="contact.html">
             Contact us
         </a>
 
-
-        <a
-            class="foots"
-            href="about.html"
-        >
+        <a href="about.html">
             About us
         </a>
-
 
     </div>
 
 
-    <p class="footer-title">
+    <div class="footer-logo">
         🎾 Tennis 4 Life
-    </p>
-
+    </div>
 
 </footer>
 
 
-
 </body>
-
 </html>
