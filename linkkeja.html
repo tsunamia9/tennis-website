@@ -1,87 +1,416 @@
 <!DOCTYPE html>
-<html>
+<html lang="fi">
+
 <head>
- <link rel="icon” type="tenniskuvia/ikoni.jpg” href="tenniskuvia/ikoni.jpg">
-    
-    <!Logo ja "tennis 4 life" -teksti -->
-    <header><br>
-       <meta charset=utf-8>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">>
-        <img class="logo" src="tenniskuvia/tennislogo.png" alt=”Logo" height="300"><br><br><br>
-       
-    <! Search bar -->
-                                                                                  <div class="wrapper">
-    <img class="search-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPHBhdGggZD0iTTU1LjE0Niw1MS44ODdMNDEuNTg4LDM3Ljc4NmMzLjQ4Ni00LjE0NCw1LjM5Ni05LjM1OCw1LjM5Ni0xNC43ODZjMC0xMi42ODItMTAuMzE4LTIzLTIzLTIzcy0yMywxMC4zMTgtMjMsMjMgIHMxMC4zMTgsMjMsMjMsMjNjNC43NjEsMCw5LjI5OC0xLjQzNiwxMy4xNzctNC4xNjJsMTMuNjYxLDE0LjIwOGMwLjU3MSwwLjU5MywxLjMzOSwwLjkyLDIuMTYyLDAuOTIgIGMwLjc3OSwwLDEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNywxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
-    <input class="search" placeholder="Etsi sivustolta..." type="text" >
-    <img class="clear-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxLjk3NiA1MS45NzYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxLjk3NiA1MS45NzY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8cGF0aCBkPSJNNDQuMzczLDcuNjAzYy0xMC4xMzctMTAuMTM3LTI2LjYzMi0xMC4xMzgtMzYuNzcsMGMtMTAuMTM4LDEwLjEzOC0xMC4xMzcsMjYuNjMyLDAsMzYuNzdzMjYuNjMyLDEwLjEzOCwzNi43NywwICAgQzU0LjUxLDM0LjIzNSw1NC41MSwxNy43NCw0NC4zNzMsNy42MDN6IE0zNi4yNDEsMzYuMjQxYy0wLjc4MSwwLjc4MS0yLjA0NywwLjc4MS0yLjgyOCwwbC03LjQyNS03LjQyNWwtNy43NzgsNy43NzggICBjLTAuNzgxLDAuNzgxLTIuMDQ3LDAuNzgxLTIuODI4LDBjLTAuNzgxLTAuNzgxLTAuNzgxLTIuMDQ3LDAtMi44MjhsNy43NzgtNy43NzhsLTcuNDI1LTcuNDI1Yy0wLjc4MS0wLjc4MS0wLjc4MS0yLjA0OCwwLTIuODI4ICAgYzAuNzgxLTAuNzgxLDIuMDQ3LTAuNzgxLDIuODI4LDBsNy40MjUsNy40MjVsNy4wNzEtNy4wNzFjMC43ODEtMC43ODEsMi4wNDctMC43ODEsMi44MjgsMGMwLjc4MSwwLjc4MSwwLjc4MSwyLjA0NywwLDIuODI4ICAgbC03LjA3MSw3LjA3MWw3LjQyNSw3LjQyNUMzNy4wMjIsMzQuMTk0LDM3LjAyMiwzNS40NiwzNi4yNDEsMzYuMjQxeiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
-  </div> 
-  
-  <! Sivuvalikko -->
-  
-  
-   <div class="fixed">
-    <a href="yleisesti.html" class=valikko >Tennis yleisesti</a><br><br>
-    <a href="minajatennis.html" class=valikko >Minä & tennis</a><br><br>
-    <a href="suosittelen.html" class=valikko >Miksi suosittelen?</a><br><br>
-    <a href="kilpailut.html" class=valikko >Kilpailut & tapahtumat </a> <br><br>
-     <a href="linkkeja.html" class=valikko >Linkkejä</a>           </div>                  
-    <h4>Tennis 4 Life</h4>
-      
-                            
-    <! Päävalikko -->                        
-    
-    <nav class="alkuvalikko">
-     <a href="yleisesti.html" class=valikko1 >Tennis yleisesti</a>
-    <a href="minajatennis.html" class=valikko1 >Minä & tennis</a>
-    <a href="suosittelen.html" class=valikko1 >Miksi suosittelen tennistä?</a> 
-    <a href="kilpailut.html" class=valikko1 >Kilpailut & tapahtumat </a> 
-    <a href="linkkeja.html" class=valikko1 >Linkkejä</a>                             
-    </nav>
-                          
-       <h1>Linkkejä lajista kiinnostuneille</h1>                        
-    </header>
-                               
-    <title>Tennis</title>
+
     <meta charset="UTF-8">
-    <metaname="author"content=”Jaakko Linnamaa">
-    <metaname=”description” content=”Jaakko ja tennis harrastuksena">
-    
-    <metahttp-equiv=”default-style” content=”60”>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="author"
+        content="Jaakko Linnamaa"
+    >
+
+    <meta
+        name="description"
+        content="Tennis 4 Life – hyödyllisiä linkkejä ja tennisaiheisia sivustoja."
+    >
+
+    <title>Linkkejä | Tennis 4 Life</title>
+
     <link rel="stylesheet" href="tyylii.css">
-   
- 
-    </head>
 
-<body>
-   <div class="container"> 
-    <div class="container3"> 
-    <br><br><br> <br><br><br><br>  <br><br>                  
-    <h2>Opetusvideoita:</h2><br><br>
-   <a id="peruslyonnit" href="https://www.youtube.com/watch?v=9sBL1WsREyE" class=foots > Harjoittelijoille peruslyönneistä</a>
-    <a id="peruslyonnit" href=" https://www.youtube.com/watch?v=WgmzdLQ4hdQ"class=foots > Vinkkejä pelaamiseen</a>
-<br><br><br><br>
-                                                       
-    <h2>Tilastoja (Grand Slam -voitot):</h2><br>
-     <a id="tilastot" href="https://www.statista.com/statistics/263034/male-tennis-players-with-the-most-victories-at-grand-slam-tournaments/" class=foots >Miehet</a>            <a id="tilastot" href="https://www.statista.com/statistics/280390/female-tennis-players-with-the-most-victories-at-grand-slam-tournaments/" class=foots >Naiset</a>                             <br><br><br><br><br>                                       
-    <h2>Muita linkkejä:</h2> 
-    <br><br><br>
-    <a id="tilastot2" href="http://blog.mytennislessons.com/top-10-tennis-scenes-movies/" </a>                
-    <h3>Top 10 tenniskohtausta elokuvissa</h3>
-    <a id="tilastot2" href="https://www.youtube.com/watch?v=TyGO0RU7aVk" </a>  <br><br><br>            
-    <h3>Historian pisin tennisottelu (11h): John Isner vs Nicolas Mahut (Wimbledon 2010)</h3></a>
-        <br><br>                                                                                                           
-        
-                                                                       <i>                                                                       
-</body>
-<br><br><br><br><br><br><br><br><br><br><br><br><br>                                                                          
- <footer><div class="flex-container1">
+</head>
 
 
-<nav class="city">
-<a href="condition.html" class=foots >Condition of use</a>
-<a href="policy.html" class=foots >Privacy policy</a>
-<a href="contact.html" class=foots >Contact us</a>
-<a href="about.html" class=foots >About us</a>
-</nav></div>
+<body class="inner-page">
+
+
+<!-- =========================================
+     YLÄOSA
+     ========================================= -->
+
+<header class="inner-header">
+
+
+    <!-- Hakukenttä -->
+
+    <div class="inner-search">
+
+        <span class="search-icon">⌕</span>
+
+        <input
+            type="text"
+            placeholder="Etsi sivustolta..."
+            aria-label="Etsi sivustolta"
+        >
+
+        <span class="search-clear">×</span>
+
+    </div>
+
+
+    <!-- Logo -->
+
+    <div class="inner-logo">
+        Tennis <span>4</span> Life
+    </div>
+
+
+    <div class="inner-subtitle">
+        TENNIS • PASSION • LIFE
+    </div>
+
+
+</header>
+
+
+
+<!-- =========================================
+     SIVUVALIKKO
+     ========================================= -->
+
+<aside class="inner-side-menu">
+
+    <div class="side-heading">
+        🎾 VALIKKO
+    </div>
+
+
+    <a href="index.html">
+        Etusivu
+    </a>
+
+
+    <a href="yleisesti.html">
+        Tennis yleisesti
+    </a>
+
+
+    <a href="minajatennis.html">
+        Minä & tennis
+    </a>
+
+
+    <a href="suosittelen.html">
+        Miksi suosittelen?
+    </a>
+
+
+    <a href="kilpailut.html">
+        Kilpailut & tapahtumat
+    </a>
+
+
+    <a href="linkkeja.html" class="current">
+        Linkkejä
+    </a>
+
+</aside>
+
+
+
+<!-- =========================================
+     PÄÄSISÄLTÖ
+     ========================================= -->
+
+<main class="inner-main">
+
+
+    <!-- Sivun otsikko -->
+
+    <div class="page-heading">
+
+        <span>🔗</span>
+
+        <h1>
+            Linkkejä lajista kiinnostuneille
+        </h1>
+
+        <span>🎾</span>
+
+    </div>
+
+
+
+    <!-- TILASTOT -->
+
+    <section class="info-card">
+
+        <div class="small-heading">
+            TENNISTILASTOT
+        </div>
+
+
+        <h2>
+            Grand Slam -voitot
+        </h2>
+
+
+        <p>
+            Haluatko tutkia, ketkä ovat voittaneet eniten
+            Grand Slam -turnauksia? Näistä tilastoista löydät
+            tietoa sekä miesten että naisten tennisennätyksistä.
+        </p>
+
+
+        <div class="link-grid">
+
+
+            <a
+                class="link-card"
+                href="https://www.statista.com/statistics/263034/male-tennis-players-with-the-most-victories-at-grand-slam-tournaments/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <span class="link-icon">
+                    👨‍🦱
+                </span>
+
+                <strong>
+                    Miesten tilastot
+                </strong>
+
+                <small>
+                    Grand Slam -voitot
+                </small>
+
+                <span class="link-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+
+            <a
+                class="link-card"
+                href="https://www.statista.com/statistics/280390/female-tennis-players-with-the-most-victories-at-grand-slam-tournaments/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <span class="link-icon">
+                    👩
+                </span>
+
+                <strong>
+                    Naisten tilastot
+                </strong>
+
+                <small>
+                    Grand Slam -voitot
+                </small>
+
+                <span class="link-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- MUUT LINKIT -->
+
+    <section class="info-card">
+
+        <div class="small-heading">
+            MUITA LINKKEJÄ
+        </div>
+
+
+        <h2>
+            Tennisaiheista sisältöä
+        </h2>
+
+
+        <div class="link-list">
+
+
+            <a
+                class="big-link"
+                href="https://blog.mytennislessons.com/top-10-tennis-scenes-movies/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <span class="big-link-icon">
+                    🎬
+                </span>
+
+                <div>
+
+                    <strong>
+                        Top 10 tenniskohtausta elokuvissa
+                    </strong>
+
+                    <small>
+                        Tennis ja elokuvat
+                    </small>
+
+                </div>
+
+                <span class="link-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+
+            <a
+                class="big-link"
+                href="https://www.youtube.com/watch?v=TyGO0RU7aVk"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <span class="big-link-icon">
+                    ▶️
+                </span>
+
+                <div>
+
+                    <strong>
+                        Historian pisin tennisottelu
+                    </strong>
+
+                    <small>
+                        John Isner vs. Nicolas Mahut – Wimbledon 2010
+                    </small>
+
+                </div>
+
+                <span class="link-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SUOSITELTU -->
+
+    <section class="info-card special-card">
+
+        <div class="small-heading">
+            TENNIS 4 LIFE
+        </div>
+
+
+        <h2>
+            Löydä lisää tenniksen maailmasta
+        </h2>
+
+
+        <p>
+            Internetistä löytyy valtavasti tennisaiheista
+            materiaalia. Tilastot, videot, uutiset ja
+            historialliset ottelut ovat hyvä tapa tutustua
+            lajiin myös kentän ulkopuolella.
+        </p>
+
+
+        <div class="tennis-quote">
+            “Tennis ei lopu siihen, kun maila lasketaan kädestä.”
+        </div>
+
+    </section>
+
+
+
+    <!-- MUUT SIVUT -->
+
+    <section class="info-card">
+
+        <div class="small-heading">
+            TUTUSTU LISÄÄ
+        </div>
+
+
+        <h2>
+            Muut Tennis 4 Life -sivut
+        </h2>
+
+
+        <div class="other-pages">
+
+            <a href="yleisesti.html">
+                Tennis yleisesti
+            </a>
+
+            <a href="minajatennis.html">
+                Minä & tennis
+            </a>
+
+            <a href="suosittelen.html">
+                Miksi suosittelen?
+            </a>
+
+            <a href="kilpailut.html">
+                Kilpailut & tapahtumat
+            </a>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+     ========================================= -->
+
+<footer class="inner-footer">
+
+
+    <div class="footer-buttons">
+
+        <a href="condition.html">
+            Condition of use
+        </a>
+
+        <a href="privacy.html">
+            Privacy policy
+        </a>
+
+        <a href="contact.html">
+            Contact us
+        </a>
+
+        <a href="about.html">
+            About us
+        </a>
+
+    </div>
+
+
+    <div class="footer-logo">
+        🎾 Tennis 4 Life
+    </div>
+
+
 </footer>
+
+
+</body>
+
 </html>
