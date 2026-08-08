@@ -1271,3 +1271,239 @@ h2 {
         font-size: 13px;
     }
 }
+
+SISÄLTÖKORTIT
+   ========================================================= */
+
+.content-card {
+    width: min(1000px, 100%);
+
+    margin: 35px auto;
+
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0,70,40,0.92),
+            rgba(0,40,25,0.95)
+        );
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.35);
+
+    text-align: center;
+}
+
+
+.content-card h2 {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   KUVA-KORTTI
+   ========================================================= */
+
+.image-card {
+    margin: 30px auto;
+
+    padding: 20px;
+
+    background:
+        rgba(0,25,15,0.5);
+
+    border-radius: 25px;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    max-width: 900px;
+}
+
+
+.image-card .tennisqva {
+    display: block;
+
+    width: min(850px, 100%);
+
+    margin: 0 auto;
+}
+
+
+.image-caption {
+    margin-top: 20px;
+
+    font-size: 18px;
+
+    font-style: italic;
+}
+
+
+.source-text {
+    font-size: 15px;
+
+    opacity: 0.75;
+}
+
+
+.source-text a {
+    color: #ffe600;
+}
+
+
+/* =========================================================
+   KENTTÄTYYPPIEN KORTIT
+   ========================================================= */
+
+.court-types {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin: 30px auto;
+
+    max-width: 900px;
+}
+
+
+.court-box {
+    padding: 22px;
+
+    background:
+        rgba(0,35,20,0.8);
+
+    border:
+        1px solid rgba(255,255,255,0.18);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.court-box:hover {
+    transform: translateY(-6px);
+
+    background:
+        rgba(0,75,42,0.9);
+
+    border-color:
+        rgba(255,230,0,0.6);
+}
+
+
+.court-box h3 {
+    margin-top: 0;
+
+    font-size: 1.5rem;
+}
+
+
+.court-box p {
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer-links {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+}
+
+
+/* =========================================================
+   PUHELIN
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+    .content-card {
+        padding: 22px 15px;
+
+        border-radius: 22px;
+    }
+
+    .court-types {
+        grid-template-columns: 1fr;
+    }
+
+    .court-box p {
+        font-size: 17px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+    }
+
+    .footer-links .foots {
+        width: min(350px, 90%);
+    }
+}
+Mitä tällä saat?
+
+Sun yleisesti.html ei enää näytä pelkältä tekstisivulta, vaan rakenteeltaan suunnilleen:
+
+┌──────────────────────────────────────────────┐
+│                  🔍 Haku                     │
+│                                              │
+│              TENNIS 4 LIFE                  │
+├──────────────────────────────────────────────┤
+│ Etusivu │ Tennis │ Minä │ Kilpailut │ ...   │
+└──────────────────────────────────────────────┘
+
+
+              TENNIS YLEISESTI
+
+┌──────────────────────────────────────────────┐
+│       Tennis – vauhtia, taitoa ja taktiikkaa │
+│                                              │
+│  Tennis on mailapeli, jota voidaan pelata... │
+│  ...                                         │
+└──────────────────────────────────────────────┘
+
+
+┌──────────────────────────────────────────────┐
+│              Erilaiset tenniskentät          │
+│                                              │
+│              [ ISO TENNISKENTTÄKUVA ]        │
+│                                              │
+│        US Openin kova-alustainen kenttä...   │
+│                                              │
+│ ┌──────────┐ ┌──────────┐ ┌──────────┐       │
+│ │ 🎾 Kova  │ │ 🟠 Massa │ │ 🌱 Nurmi │       │
+│ │ alusta   │ │          │ │          │       │
+│ └──────────┘ └──────────┘ └──────────┘       │
+│                                              │
+│       [ Tutustu eri kenttätyyppeihin → ]     │
+└──────────────────────────────────────────────┘
+
+
+┌──────────────────────────────────────────────┐
+│         Mikä tekee tenniksestä               │
+│              kiinnostavaa?                   │
+│                                              │
+│              tekstiä...                      │
+└──────────────────────────────────────────────┘
