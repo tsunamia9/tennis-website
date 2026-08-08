@@ -1,9 +1,12 @@
-```css
 /* =========================================================
-   TENNIS-WEBSITE – UUSI TYYLI
+   TENNIS 4 LIFE
+   UUSI TYYLII.CSS
    ========================================================= */
 
-/* ---------- PERUSASETUKSET ---------- */
+
+/* =========================================================
+   PERUSASETUKSET
+   ========================================================= */
 
 * {
     box-sizing: border-box;
@@ -16,274 +19,463 @@ html {
 body {
     margin: 0;
     padding: 0;
+
     background:
-        radial-gradient(circle at top, rgba(0, 100, 55, 0.45), transparent 45%),
-        rgb(0, 45, 25);
+        linear-gradient(
+            180deg,
+            #002f1b 0%,
+            #003d1e 45%,
+            #002d18 100%
+        );
+
     color: white;
+
     font-family: "Goudy Old Style", Georgia, serif;
+
     min-height: 100vh;
 }
 
 
-/* ---------- TEKSTIT ---------- */
-
-p {
-    font-size: 1.25rem;
-    font-style: italic;
-    line-height: 1.8;
-    color: white;
-    max-width: 1000px;
-    margin: 20px auto;
-}
-
-.container {
-    width: min(1000px, 92%);
-    margin: 0 auto;
-    text-align: center;
-    text-shadow: 3px 3px 6px #000;
-}
-
-
-/* ---------- OTSIKOT ---------- */
-
-h1 {
-    color: white;
-    font-family: "Courier New", monospace;
-    font-size: clamp(2.3rem, 6vw, 4.5rem);
-    text-align: center;
-    text-shadow: 4px 4px 8px #000;
-
-    background-image: url("tenniskuvia/night.jpg");
-    background-size: cover;
-    background-position: center;
-
-    padding: 45px 20px;
-    margin: 25px auto;
-
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.3);
-
-    max-width: 1200px;
-}
-
-h2 {
-    color: white;
-    font-family: "Courier New", monospace;
-    font-size: clamp(1.8rem, 4vw, 3rem);
-    text-align: center;
-    text-shadow: 3px 3px 7px #000;
-
-    background-image: url("tenniskuvia/night.jpg");
-    background-size: cover;
-    background-position: center;
-
-    padding: 18px 25px;
-    margin: 35px auto 20px;
-
-    border-radius: 25px;
-    border: 1px solid rgba(255,255,255,0.4);
-
-    max-width: 1050px;
-}
-
-h3 {
-    color: white;
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    text-align: center;
-    text-shadow: 3px 3px 6px #000;
-    text-decoration: underline;
-    text-decoration-color: white;
-    margin: 30px auto 15px;
-}
-
-h4 {
-    font-family: "Brush Script MT", cursive;
-    color: #ffe600;
-    font-size: clamp(3rem, 8vw, 7rem);
-    text-align: center;
-    font-style: italic;
-    text-shadow: 4px 5px 8px #000;
-    margin: 20px auto;
-}
-
-
 /* =========================================================
-   NAVIGAATIO
+   LINKIT
    ========================================================= */
 
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
-
-    width: 100%;
-
-    background: rgba(0, 35, 20, 0.95);
-
-    padding: 12px 20px;
-
-    border-bottom: 2px solid rgba(255,255,255,0.2);
-
-    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-
-    position: relative;
-    z-index: 10;
-}
-
-
-/* Ylävalikko */
-
-.valikko1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-
-    gap: 10px;
-
-    width: 100%;
-
-    font-family: "Courier New", monospace;
-    font-size: 1rem;
-
-    padding: 10px;
-    margin: 0;
-
-    text-align: center;
-}
-
-
-/* Päävalikon linkit */
-
-.valikko1 a,
-.lisaa,
-.foots {
-    display: inline-block;
-
+a {
     color: white;
-    text-decoration: none;
-
-    background: rgba(0, 75, 40, 0.85);
-
-    border: 1px solid rgba(255,255,255,0.4);
-
-    border-radius: 12px;
-
-    padding: 10px 18px;
-
     transition:
-        transform 0.2s ease,
+        color 0.2s ease,
         background 0.2s ease,
+        transform 0.2s ease,
+        border-color 0.2s ease,
         box-shadow 0.2s ease;
 }
 
-
-/* Hover */
-
-.valikko1 a:hover,
-.lisaa:hover,
-.foots:hover {
-    color: #fff;
-    background: #00733d;
-
-    transform: translateY(-3px);
-
-    box-shadow: 0 7px 18px rgba(0,0,0,0.45);
-
-    text-decoration: none;
+a:visited {
+    color: white;
 }
 
-
-/* Klikattu linkki */
+a:hover {
+    color: #ffe600;
+}
 
 a:active {
     color: #9cffbd;
 }
 
 
-/* Vierailtu linkki */
-
-a:visited {
-    color: #ffffff;
-}
-
-
-/* ---------- ALAVALIKKO ---------- */
-
-.city {
-    background: rgba(0, 70, 40, 0.9);
-
-    font-family: "Goudy Old Style", Georgia, serif;
-
-    text-align: center;
-
-    min-height: 55px;
-
-    padding: 10px;
-
-    border: 1px solid rgba(255,255,255,0.25);
-
-    border-radius: 20px;
-
-    box-shadow: 0 5px 20px rgba(0,0,0,0.35);
-
-    margin: 10px auto;
-
-    max-width: 1100px;
-}
-
-
-/* Alavalikon pallukat / linkit */
-
-.foots {
-    font-size: 1.1rem;
-    margin: 5px;
-    width: auto;
-    min-width: 130px;
-}
-
-
-/* ---------- YLÄVALIKON ISOMMAT LINKIT ---------- */
-
-.lisaa {
-    font-size: 1.2rem;
-    margin: 5px;
-    min-width: 160px;
-}
-
-
-/* ---------- YLÄPALKINEN ---------- */
-
-.alkuvalikko {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-
-    width: 100%;
-
-    min-height: 70px;
-
-    background: rgba(0, 62, 0, 0.9);
-
-    padding: 10px;
-
-    margin: 0;
-
-    box-shadow: 0 5px 25px rgba(0,0,0,0.45);
-
-    border-bottom: 2px solid rgba(255,255,255,0.2);
-}
-
-
-/* ---------- HEADER ---------- */
+/* =========================================================
+   YLÄOSA / HEADER
+   ========================================================= */
 
 header {
     width: 100%;
+
     text-align: center;
-    padding-bottom: 10px;
+
+    background:
+        linear-gradient(
+            rgba(0, 45, 25, 0.55),
+            rgba(0, 45, 25, 0.75)
+        );
+
+    padding: 25px 20px 30px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.25);
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo {
+    display: block;
+
+    max-width: 500px;
+    width: min(70%, 500px);
+
+    height: auto;
+
+    margin: 15px auto;
+
+    position: relative;
+    left: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 8px 8px rgba(0,0,0,0.55));
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.03);
+
+    filter:
+        drop-shadow(0 10px 15px rgba(0,0,0,0.7));
+}
+
+
+/* =========================================================
+   HAKUPALKI
+   ========================================================= */
+
+.wrapper {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    margin: 5px auto 15px;
+}
+
+.search {
+    width: min(350px, 80%);
+
+    height: 48px;
+
+    padding: 8px 45px 8px 15px;
+
+    font-size: 16px;
+
+    border: 2px solid #005c34;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background: white;
+
+    color: #222;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.3);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.search:focus {
+    border-color: #ffe600;
+
+    box-shadow:
+        0 0 0 3px rgba(255,230,0,0.2),
+        0 5px 15px rgba(0,0,0,0.3);
+}
+
+.clear-icon {
+    position: absolute;
+
+    right: calc(10% + 5px);
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 20px;
+
+    cursor: pointer;
+
+    visibility: hidden;
+}
+
+
+/* =========================================================
+   UUSI YLÄVALIKKO
+   ========================================================= */
+
+.alkuvalikko {
+    width: 100%;
+
+    min-height: 78px;
+
+    display: flex !important;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            #002d19,
+            #00512d,
+            #002d19
+        );
+
+    border-top: 1px solid rgba(255,255,255,0.12);
+
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.4);
+
+    padding: 10px 20px;
+
+    margin: 0;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   YLÄVALIKON SISÄLTÖ
+   ========================================================= */
+
+.valikko1 {
+    width: 100%;
+
+    display: flex !important;
+
+    flex-direction: row !important;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    border: none !important;
+
+    background: transparent !important;
+
+    text-align: center;
+
+    float: none !important;
+
+    box-shadow: none !important;
+}
+
+
+/* =========================================================
+   YLÄVALIKON NAPIT
+   ========================================================= */
+
+.valikko1 a {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 45px;
+
+    padding: 10px 19px;
+
+    color: white;
+
+    background:
+        rgba(0,35,20,0.75);
+
+    border: 1px solid rgba(255,255,255,0.55);
+
+    border-radius: 30px;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 15px;
+
+    font-weight: normal;
+
+    text-decoration: none;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.3);
+}
+
+.valikko1 a:hover {
+    background: #ffe600;
+
+    color: #003d1e;
+
+    border-color: #ffe600;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.45);
+
+    text-decoration: none;
+}
+
+.valikko1 a:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   YLEINEN SISÄLTÖ
+   ========================================================= */
+
+.container {
+    width: min(1100px, 92%);
+
+    margin: 40px auto;
+
+    text-align: center;
+
+    text-shadow:
+        3px 3px 7px rgba(0,0,0,0.8);
+}
+
+
+/* =========================================================
+   LEIPÄTEKSTI
+   ========================================================= */
+
+p {
+    max-width: 1000px;
+
+    margin: 15px auto;
+
+    font-size: 22px;
+
+    font-style: normal;
+
+    font-family:
+        "Goudy Old Style",
+        Georgia,
+        serif;
+
+    color: white;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   OTSIKOT
+   ========================================================= */
+
+h1 {
+    color: white;
+
+    font-size: clamp(2.8rem, 7vw, 5rem);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    text-align: center;
+
+    margin: 35px auto 25px;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,70,40,0.95),
+            rgba(0,35,20,0.95)
+        );
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    text-shadow:
+        3px 4px 8px #000;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.3);
+}
+
+
+h2 {
+    color: white;
+
+    font-size: clamp(2rem, 5vw, 3.2rem);
+
+    text-align: center;
+
+    margin: 30px auto 20px;
+
+    padding: 15px 20px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,75,42,0.9),
+            rgba(0,45,27,0.9)
+        );
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    text-shadow:
+        3px 3px 7px #000;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.25);
+}
+
+
+h3 {
+    color: white;
+
+    font-size: 2rem;
+
+    text-align: center;
+
+    margin: 25px auto;
+
+    text-shadow:
+        3px 3px 7px #000;
+
+    text-decoration:
+        underline;
+
+    text-decoration-color:
+        white;
+}
+
+
+h4 {
+    font-family:
+        "Brush Script MT",
+        cursive;
+
+    color: #ffe600;
+
+    font-size: clamp(3rem, 8vw, 7rem);
+
+    text-align: center;
+
+    margin: 20px auto;
+
+    text-shadow:
+        5px 8px 8px #000;
+
+    font-style: italic;
+
+    position: relative;
+
+    top: auto;
+    left: auto;
 }
 
 
@@ -293,26 +485,22 @@ header {
 
 img {
     max-width: 100%;
+
     height: auto;
 }
 
 
-/* Yleinen tennis-kuva */
-
 .tennisqva {
-    display: block;
+    position: relative;
 
-    max-width: 900px;
-    width: 90%;
-
-    margin: 30px auto;
+    max-width: 100%;
 
     border-radius: 25px;
 
-    border: 2px solid rgba(255,255,255,0.35);
+    border: 2px solid #80cfff;
 
     box-shadow:
-        0 15px 45px rgba(0, 0, 0, 0.6);
+        0 15px 45px rgba(0,81,153,0.65);
 
     transition:
         transform 0.3s ease,
@@ -320,81 +508,76 @@ img {
 }
 
 .tennisqva:hover {
-    transform: scale(1.02);
+    transform: translateY(-5px) scale(1.02);
 
     box-shadow:
-        0 20px 60px rgba(0, 100, 80, 0.7);
+        0 20px 55px rgba(0,81,153,0.8);
 }
 
 
-/* Nadal-kuvat */
-
 .rafa {
-    display: block;
+    position: relative;
 
-    max-width: 800px;
-    width: 90%;
-
-    margin: 30px auto;
+    max-width: min(800px, 100%);
 
     border-radius: 25px;
 
-    border: 2px solid rgba(80,140,255,0.6);
+    border: 2px solid #4545c7;
 
     box-shadow:
-        0 15px 50px rgba(0, 20, 120, 0.7);
+        0 15px 50px rgba(0,0,120,0.6);
 
-    transition: transform 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .rafa:hover {
     transform: scale(1.03);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,150,0.75);
 }
 
 
-/* Nuorena-kuvat */
-
 .nuorena {
-    display: block;
+    position: relative;
 
-    max-width: 800px;
-    width: 90%;
-
-    margin: 30px auto;
+    max-width: 100%;
 
     border-radius: 25px;
 
-    border: 2px solid rgba(150,180,80,0.6);
+    border: 2px solid #779944;
 
     box-shadow:
-        0 15px 50px rgba(100,100,50,0.6);
+        0 10px 45px rgba(150,145,80,0.55);
 
-    transition: transform 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
 }
 
 .nuorena:hover {
     transform: scale(1.03);
+
+    border-color: #c4ff54;
 }
 
 
-/* Turnaus-kuvat */
-
 .turnaus {
-    display: block;
+    position: relative;
 
-    max-width: 900px;
-    width: 90%;
-
-    margin: 30px auto;
+    max-width: 100%;
 
     border-radius: 25px;
 
-    border: 2px solid rgba(255,150,70,0.6);
+    border: 2px solid #ff9d4d;
 
     box-shadow:
-        0 15px 50px rgba(180,70,40,0.55);
+        0 15px 45px rgba(199,80,57,0.6);
 
-    transition: transform 0.3s ease;
+    transition:
+        transform 0.3s ease;
 }
 
 .turnaus:hover {
@@ -402,22 +585,19 @@ img {
 }
 
 
-/* Uudet kuvat */
-
 .uusi {
-    display: block;
+    position: relative;
 
-    max-width: 450px;
-    width: 90%;
+    max-width: 400px;
 
-    margin: 30px auto;
+    width: 100%;
 
-    border-radius: 25px;
+    border-radius: 30px;
 
-    border: 2px solid rgba(255,255,255,0.35);
+    border: 3px double #1f7d43;
 
     box-shadow:
-        0 15px 50px rgba(0,0,0,0.7);
+        0 15px 60px rgba(0,0,0,0.75);
 
     transition:
         transform 0.3s ease,
@@ -425,56 +605,428 @@ img {
 }
 
 .uusi:hover {
-    transform: scale(1.04);
+    transform: scale(1.05);
 
     box-shadow:
-        0 20px 60px rgba(0,100,60,0.8);
+        0 20px 70px rgba(0,0,0,0.9);
 }
 
 
-/* Mailat */
-
 .mailat {
-    display: block;
+    position: relative;
 
-    max-width: 900px;
-    width: 90%;
-
-    margin: 30px auto;
+    max-width: 100%;
 
     border-radius: 25px;
 
-    border: 2px solid rgba(255,150,80,0.6);
+    border: 2px solid #ff9d4d;
 
     box-shadow:
-        0 15px 45px rgba(190,70,40,0.55);
+        0 10px 35px rgba(199,85,57,0.6);
 
-    transition: transform 0.3s ease;
+    transition:
+        transform 0.3s ease;
 }
 
 .mailat:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
 }
 
 
-/* Sammakko */
+/* =========================================================
+   NAV / MUUT VALIKOT
+   ========================================================= */
+
+nav {
+    list-style: none;
+}
+
+
+.city {
+    background:
+        rgba(0,62,30,0.9);
+
+    font-family:
+        "Goudy Old Style",
+        Georgia,
+        serif;
+
+    list-style-type: none;
+
+    text-align: center;
+
+    min-height: 60px;
+
+    padding: 15px;
+
+    border: 1px double rgba(255,255,255,0.4);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.25);
+}
+
+
+/* =========================================================
+   ALAVALIKON NELJÄ NAPPIA
+   ========================================================= */
+
+.foots {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white !important;
+
+    text-decoration: none !important;
+
+    font-size: 20px;
+
+    font-family:
+        "Goudy Old Style",
+        Georgia,
+        serif;
+
+    border: 1px solid white;
+
+    padding: 12px 25px;
+
+    background:
+        rgba(0,55,30,0.85);
+
+    margin: 8px 10px;
+
+    min-width: 180px;
+
+    border-radius: 40px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.foots:hover {
+    background: #ffe600;
+
+    color: #003d1e !important;
+
+    border-color: #ffe600;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.45);
+}
+
+
+/* Käyty sivu */
+
+.foots.visited-page {
+    background: #00552f;
+
+    color: #ffe600 !important;
+
+    border-color: #ffe600;
+
+    box-shadow:
+        0 0 15px rgba(255,230,0,0.3);
+}
+
+
+.foots.visited-page::after {
+    content: " ✓";
+
+    color: #ffe600;
+
+    font-weight: bold;
+}
+
+
+.foots.visited-page:hover {
+    background: #00834a;
+
+    color: white !important;
+
+    border-color: white;
+}
+
+
+/* =========================================================
+   ISOMMAT NAPIT
+   ========================================================= */
+
+.lisaa {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white !important;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    text-decoration: none !important;
+
+    border: 2px solid rgba(255,255,255,0.7);
+
+    padding: 14px 28px;
+
+    background:
+        #00502c;
+
+    margin: 10px;
+
+    min-width: 180px;
+
+    border-radius: 50px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.lisaa:hover {
+    background: #ffe600;
+
+    color: #003d1e !important;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.4);
+}
+
+
+/* =========================================================
+   FIXED / SIVUVALIKKO
+   ========================================================= */
+
+.valikko {
+    display: flex;
+
+    flex-direction: column;
+
+    position: sticky;
+
+    top: 10px;
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 18px;
+
+    text-shadow:
+        3px 3px 6px #000;
+
+    height: auto;
+
+    z-index: 5;
+}
+
+
+div.fixed {
+    width: 190px;
+
+    position: fixed;
+
+    left: 10px;
+
+    bottom: 40px;
+
+    margin: 0;
+
+    z-index: 20;
+}
+
+
+.fixed {
+    text-shadow:
+        3px 3px 6px #000;
+
+    font-size: 18px;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   FLEX-KONTIT
+   ========================================================= */
+
+.flex-container {
+    display: flex;
+
+    width: 100%;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+
+.flex-container1 {
+    display: flex;
+
+    width: 100%;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+
+div.flex_fixed {
+    position: fixed;
+
+    bottom: 30px;
+
+    right: 30px;
+
+    width: 300px;
+
+    height: auto;
+
+    border: none;
+
+    margin: 0;
+
+    text-shadow:
+        3px 3px 6px #000;
+
+    z-index: 20;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    width: 100%;
+
+    text-align: center;
+
+    margin-top: 60px;
+
+    padding: 35px 20px;
+
+    background:
+        rgba(0,25,15,0.9);
+
+    border-top:
+        1px solid rgba(255,255,255,0.15);
+
+    box-shadow:
+        0 -5px 20px rgba(0,0,0,0.2);
+}
+
+
+/* =========================================================
+   LINKIT / MUUT TEKSTIT
+   ========================================================= */
+
+div.ylateksti {
+    font-size: 70px;
+
+    text-align: center;
+
+    right: auto;
+}
+
+
+a {
+    text-underline-offset: 4px;
+}
+
+
+/* =========================================================
+   TAUSTAKUVAT
+   ========================================================= */
+
+h1 {
+    background-image:
+        linear-gradient(
+            rgba(0,40,25,0.65),
+            rgba(0,40,25,0.85)
+        ),
+        url("tenniskuvia/night.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+h2 {
+    background-image:
+        linear-gradient(
+            rgba(0,55,30,0.7),
+            rgba(0,35,20,0.85)
+        ),
+        url("tenniskuvia/night.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+.container3 {
+    background-image:
+        linear-gradient(
+            rgba(0,30,15,0.35),
+            rgba(0,30,15,0.65)
+        ),
+        url("tenniskuvia/palloa.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    border-radius: 25px;
+}
+
+
+/* =========================================================
+   SAMMAKKO
+   ========================================================= */
 
 .sammakko {
-    display: block;
+    position: relative;
 
-    max-width: 600px;
-    width: 90%;
-
-    margin: 30px auto;
+    max-width: 100%;
 
     border-radius: 25px;
 
+    box-shadow:
+        0 0 40px 10px #06fcc8;
+
     border: 2px solid #037f92;
 
-    box-shadow:
-        0 0 35px 8px #06fcc8;
-
-    transition: transform 0.3s ease;
+    transition:
+        transform 0.3s ease;
 }
 
 .sammakko:hover {
@@ -483,219 +1035,93 @@ img {
 
 
 /* =========================================================
-   ERIKOISELEMENTIT
+   TABLETTI
    ========================================================= */
 
-
-/* Pallotausta */
-
-.container3 {
-    background-image: url("tenniskuvia/palloa.jpg");
-
-    background-size: cover;
-    background-position: center;
-
-    border-radius: 25px;
-
-    padding: 30px;
-
-    margin: 30px auto;
-
-    max-width: 1100px;
-
-    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-}
-
-
-/* Logo */
-
-.logo {
-    display: block;
-
-    max-width: 250px;
-    width: 70%;
-
-    height: auto;
-
-    margin: 20px auto;
-}
-
-
-/* Footer */
-
-footer {
-    text-align: center;
-
-    padding: 35px 20px;
-
-    margin-top: 50px;
-
-    background: rgba(0,30,15,0.8);
-
-    border-top: 1px solid rgba(255,255,255,0.2);
-}
-
-
-/* Fixed-elementit */
-
-div.fixed {
-    width: 190px;
-
-    position: fixed;
-
-    left: 10px;
-    bottom: 30px;
-
-    z-index: 5;
-}
-
-.fixed {
-    text-shadow: 3px 3px 6px #000;
-
-    font-size: 1rem;
-
-    font-style: italic;
-}
-
-
-/* flex fixed */
-
-div.flex_fixed {
-    position: fixed;
-
-    bottom: 30px;
-    right: 30px;
-
-    width: auto;
-    height: auto;
-
-    margin: 0;
-
-    border: none;
-
-    text-shadow: 3px 3px 6px #000;
-}
-
-
-/* =========================================================
-   HAKU
-   ========================================================= */
-
-.wrapper {
-    display: flex;
-    justify-content: center;
-
-    width: 100%;
-
-    margin: 15px auto;
-}
-
-.search {
-    width: min(400px, 90%);
-
-    height: 42px;
-
-    padding: 8px 15px;
-
-    font-size: 1rem;
-
-    color: #222;
-
-    background: #fff;
-
-    border: 2px solid #006b3c;
-
-    border-radius: 12px;
-
-    outline: none;
-
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.search:focus {
-    border-color: #00a85a;
-
-    box-shadow:
-        0 0 0 3px rgba(0,168,90,0.2);
-}
-
-
-/* =========================================================
-   FLEX-KONTTI
-   ========================================================= */
-
-.flex-container {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 20px;
-
-    width: 100%;
-}
-
-.flex-container1 {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 20px;
-
-    width: 100%;
-}
-
-
-/* =========================================================
-   PIENEMMÄT NÄYTÖT
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-    p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        padding: 0 15px;
-    }
-
-    h1 {
-        margin: 15px 10px;
-        padding: 35px 15px;
-    }
-
-    h2 {
-        margin: 25px 10px 15px;
-    }
+@media (max-width: 1100px) {
 
     .valikko1 {
-        gap: 5px;
+        gap: 8px;
     }
 
-    .valikko1 a,
-    .lisaa {
-        font-size: 0.95rem;
-        min-width: auto;
-        padding: 9px 12px;
+    .valikko1 a {
+        font-size: 14px;
+
+        padding: 9px 14px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    p {
+        font-size: 20px;
     }
 
     .foots {
-        font-size: 1rem;
-        min-width: 110px;
+        min-width: 160px;
+
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================================
+   PIENEMPI NÄYTTÖ
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    header {
+        padding: 20px 15px 25px;
     }
 
-    .container3 {
-        width: 94%;
-        padding: 20px;
+    .logo {
+        width: min(85%, 420px);
     }
 
-    div.fixed,
+    .alkuvalikko {
+        padding: 12px;
+    }
+
+    .valikko1 {
+        flex-wrap: wrap !important;
+
+        gap: 8px;
+    }
+
+    .valikko1 a {
+        font-size: 13px;
+
+        padding: 9px 13px;
+    }
+
+    h1 {
+        font-size: 2.7rem;
+
+        padding: 20px 12px;
+    }
+
+    h2 {
+        font-size: 2rem;
+
+        padding: 14px;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    p {
+        font-size: 19px;
+
+        line-height: 1.6;
+    }
+
+    div.fixed {
+        display: none;
+    }
+
     div.flex_fixed {
         display: none;
     }
@@ -708,25 +1134,70 @@ div.flex_fixed {
 
 @media (max-width: 600px) {
 
-    body {
-        overflow-x: hidden;
+    .wrapper {
+        margin-bottom: 10px;
     }
 
-    p {
-        font-size: 1rem;
-        line-height: 1.65;
+    .search {
+        width: 90%;
+
+        height: 44px;
+
+        font-size: 15px;
+    }
+
+    .logo {
+        width: 90%;
+
+        margin: 10px auto;
+    }
+
+    .alkuvalikko {
+        min-height: auto;
+
+        padding: 10px;
+    }
+
+    .valikko1 {
+        flex-direction: column !important;
+
+        width: 100%;
+
+        gap: 7px;
+    }
+
+    .valikko1 a {
+        width: 100%;
+
+        max-width: 400px;
+
+        min-height: 42px;
+
+        font-size: 14px;
+
+        padding: 9px 12px;
+    }
+
+    .container {
+        width: 94%;
+
+        margin-top: 25px;
     }
 
     h1 {
         font-size: 2.2rem;
-        padding: 30px 10px;
-        border-radius: 15px;
+
+        margin-top: 20px;
+
+        padding: 18px 10px;
+
+        border-radius: 18px;
     }
 
     h2 {
         font-size: 1.7rem;
-        padding: 15px;
-        border-radius: 15px;
+
+        border-radius: 18px;
     }
 
     h3 {
@@ -737,41 +1208,28 @@ div.flex_fixed {
         font-size: 3.5rem;
     }
 
-    nav {
-        padding: 8px;
-    }
+    p {
+        font-size: 18px;
 
-    .valikko1,
-    .alkuvalikko {
-        flex-direction: column;
-
-        width: 100%;
-    }
-
-    .valikko1 a,
-    .lisaa {
-        display: block;
-
-        width: 100%;
-
-        text-align: center;
-
-        margin: 3px 0;
-
-        font-size: 1rem;
-    }
-
-    .city {
-        width: 94%;
-        border-radius: 15px;
+        line-height: 1.55;
     }
 
     .foots {
-        display: block;
-
         width: 100%;
 
-        margin: 5px 0;
+        max-width: 350px;
+
+        margin: 6px auto;
+
+        font-size: 18px;
+    }
+
+    .lisaa {
+        width: 100%;
+
+        max-width: 350px;
+
+        margin: 7px auto;
     }
 
     .tennisqva,
@@ -779,34 +1237,20 @@ div.flex_fixed {
     .nuorena,
     .turnaus,
     .uusi,
-    .mailat,
-    .sammakko {
-        width: 94%;
-        margin: 20px auto;
-        border-radius: 18px;
-    }
-
-    .logo {
-        width: 60%;
-        max-width: 200px;
-    }
-
-    .wrapper {
-        padding: 0 10px;
-    }
-
-    .search {
-        width: 100%;
+    .mailat {
+        max-width: 100%;
     }
 
     footer {
+        margin-top: 40px;
+
         padding: 25px 15px;
     }
 }
 
 
 /* =========================================================
-   PIENET PUHELIMET
+   ERITTÄIN PIENI PUHELIN
    ========================================================= */
 
 @media (max-width: 380px) {
@@ -820,187 +1264,10 @@ div.flex_fixed {
     }
 
     p {
-        font-size: 0.95rem;
-    }
-}
-```
-/* =========================================
-   UUSI MODERNI YLÄVALIKKO
-   ========================================= */
-
-.alkuvalikko {
-    width: 100%;
-    min-height: 80px;
-
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-
-    background: linear-gradient(
-        90deg,
-        #00351f,
-        #00552f,
-        #00351f
-    );
-
-    border-top: 1px solid rgba(255,255,255,0.15);
-    border-bottom: 2px solid rgba(255,255,255,0.2);
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.35);
-
-    padding: 10px 20px;
-    margin: 0;
-
-    box-sizing: border-box;
-}
-
-
-/* Linkkien sisältävä alue */
-
-.valikko1 {
-    width: 100%;
-
-    display: flex !important;
-    flex-direction: row !important;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 15px;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    border: none !important;
-
-    background: transparent !important;
-
-    box-sizing: border-box;
-}
-
-
-/* Yksittäiset linkit */
-
-.valikko1 a {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    min-height: 45px;
-
-    padding: 10px 20px;
-
-    box-sizing: border-box;
-
-    color: white;
-
-    font-family: "Courier New", monospace;
-
-    font-size: 16px;
-
-    text-decoration: none;
-
-    text-align: center;
-
-    border: 1px solid rgba(255,255,255,0.55);
-
-    border-radius: 30px;
-
-    background: rgba(0,40,25,0.7);
-
-    box-shadow:
-        0 4px 12px rgba(0,0,0,0.3);
-
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.2s ease,
-        box-shadow 0.25s ease,
-        border-color 0.25s ease;
-}
-
-
-/* Kun hiiri menee napin päälle */
-
-.valikko1 a:hover {
-    background: #ffe600;
-
-    color: #003d1e;
-
-    border-color: #ffe600;
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 7px 18px rgba(0,0,0,0.45);
-
-    text-decoration: none;
-}
-
-
-/* Klikatessa */
-
-.valikko1 a:active {
-    transform: translateY(0px);
-
-    box-shadow:
-        0 3px 8px rgba(0,0,0,0.3);
-}
-
-
-/* =========================================
-   PIENEMPI NÄYTTÖ
-   ========================================= */
-
-@media (max-width: 1000px) {
-
-    .alkuvalikko {
-        min-height: auto;
-
-        padding: 12px;
-    }
-
-    .valikko1 {
-        flex-wrap: wrap !important;
-
-        gap: 10px;
+        font-size: 17px;
     }
 
     .valikko1 a {
-        font-size: 14px;
-
-        padding: 9px 15px;
-    }
-}
-
-
-/* =========================================
-   PUHELIN
-   ========================================= */
-
-@media (max-width: 600px) {
-
-    .alkuvalikko {
-        padding: 10px;
-    }
-
-    .valikko1 {
-        flex-direction: column !important;
-
-        width: 100%;
-
-        gap: 8px;
-    }
-
-    .valikko1 a {
-        width: 100%;
-
-        max-width: 350px;
-
-        min-height: 42px;
-
-        font-size: 15px;
+        font-size: 13px;
     }
 }
