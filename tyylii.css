@@ -824,3 +824,183 @@ div.flex_fixed {
     }
 }
 ```
+/* =========================================
+   UUSI MODERNI YLÄVALIKKO
+   ========================================= */
+
+.alkuvalikko {
+    width: 100%;
+    min-height: 80px;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        90deg,
+        #00351f,
+        #00552f,
+        #00351f
+    );
+
+    border-top: 1px solid rgba(255,255,255,0.15);
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.35);
+
+    padding: 10px 20px;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* Linkkien sisältävä alue */
+
+.valikko1 {
+    width: 100%;
+
+    display: flex !important;
+    flex-direction: row !important;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: none !important;
+
+    background: transparent !important;
+
+    box-sizing: border-box;
+}
+
+
+/* Yksittäiset linkit */
+
+.valikko1 a {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 45px;
+
+    padding: 10px 20px;
+
+    box-sizing: border-box;
+
+    color: white;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 16px;
+
+    text-decoration: none;
+
+    text-align: center;
+
+    border: 1px solid rgba(255,255,255,0.55);
+
+    border-radius: 30px;
+
+    background: rgba(0,40,25,0.7);
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.3);
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* Kun hiiri menee napin päälle */
+
+.valikko1 a:hover {
+    background: #ffe600;
+
+    color: #003d1e;
+
+    border-color: #ffe600;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 7px 18px rgba(0,0,0,0.45);
+
+    text-decoration: none;
+}
+
+
+/* Klikatessa */
+
+.valikko1 a:active {
+    transform: translateY(0px);
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,0.3);
+}
+
+
+/* =========================================
+   PIENEMPI NÄYTTÖ
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+    .alkuvalikko {
+        min-height: auto;
+
+        padding: 12px;
+    }
+
+    .valikko1 {
+        flex-wrap: wrap !important;
+
+        gap: 10px;
+    }
+
+    .valikko1 a {
+        font-size: 14px;
+
+        padding: 9px 15px;
+    }
+}
+
+
+/* =========================================
+   PUHELIN
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .alkuvalikko {
+        padding: 10px;
+    }
+
+    .valikko1 {
+        flex-direction: column !important;
+
+        width: 100%;
+
+        gap: 8px;
+    }
+
+    .valikko1 a {
+        width: 100%;
+
+        max-width: 350px;
+
+        min-height: 42px;
+
+        font-size: 15px;
+    }
+}
