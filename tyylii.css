@@ -1,11 +1,11 @@
 /* =========================================================
    TENNIS 4 LIFE
-   KOKO SIVUSTON CSS
+   YHTEINEN CSS KAIKILLE SIVUILLE
    ========================================================= */
 
 
 /* =========================================================
-   PERUSASETUKSET
+   1. PERUSASETUKSET
    ========================================================= */
 
 * {
@@ -19,19 +19,20 @@ html {
 body {
     margin: 0;
     padding: 0;
+
     min-height: 100vh;
 
     background:
         radial-gradient(
             circle at 50% 0%,
             rgba(0, 100, 60, 0.35),
-            transparent 35%
+            transparent 45%
         ),
         linear-gradient(
-            135deg,
-            #001f13 0%,
-            #003d26 50%,
-            #001e12 100%
+            180deg,
+            #002f1b 0%,
+            #003d24 50%,
+            #001f12 100%
         );
 
     color: white;
@@ -40,21 +41,24 @@ body {
         "Goudy Old Style",
         Georgia,
         serif;
+
+    overflow-x: hidden;
 }
 
 
 /* =========================================================
-   LINKIT
+   2. LINKIT
    ========================================================= */
 
 a {
     color: white;
+    text-underline-offset: 4px;
 
     transition:
         color 0.2s ease,
         background 0.2s ease,
-        transform 0.2s ease,
         border-color 0.2s ease,
+        transform 0.2s ease,
         box-shadow 0.2s ease;
 }
 
@@ -72,48 +76,54 @@ a:active {
 
 
 /* =========================================================
-   HEADER
+   3. HEADER
    ========================================================= */
 
 header {
     width: 100%;
-    text-align: center;
 
+    margin: 0;
     padding: 20px 20px 30px;
+
+    text-align: center;
 
     background:
         linear-gradient(
             180deg,
-            rgba(0, 70, 43, 0.98),
-            rgba(0, 43, 27, 0.98)
+            rgba(0, 65, 39, 0.97),
+            rgba(0, 43, 26, 0.97)
         );
 
     border-bottom:
         1px solid rgba(255,255,255,0.15);
 
     box-shadow:
-        0 8px 30px rgba(0,0,0,0.3);
+        0 10px 35px rgba(0,0,0,0.35);
 }
 
 
 /* =========================================================
-   LOGO
+   4. LOGO
    ========================================================= */
 
 .logo {
     display: block;
 
-    width: min(500px, 85%);
+    width: min(500px, 80%);
     max-width: 500px;
 
     height: auto;
 
-    margin: 15px auto;
+    margin: 15px auto 20px;
+
+    position: relative;
+    left: auto;
+    right: auto;
 
     object-fit: contain;
 
     filter:
-        drop-shadow(0 8px 8px rgba(0,0,0,0.55));
+        drop-shadow(0 8px 10px rgba(0,0,0,0.65));
 
     transition:
         transform 0.3s ease,
@@ -124,62 +134,71 @@ header {
     transform: scale(1.03);
 
     filter:
-        drop-shadow(0 10px 15px rgba(0,0,0,0.7));
+        drop-shadow(0 12px 18px rgba(0,0,0,0.8));
 }
 
 
 /* =========================================================
-   HAKUPALKKI
+   5. HAKUPALKKI
    ========================================================= */
 
 .wrapper {
-    position: relative;
-
     width: 100%;
-    max-width: 500px;
+    max-width: 100%;
+
+    margin: 0 auto 15px;
 
     display: flex;
 
     justify-content: center;
     align-items: center;
 
-    margin: 0 auto 15px;
+    position: relative;
 }
 
+
+/* hakukenttä */
+
 .search {
+    display: block;
+
     width: min(350px, 90%);
     height: 44px;
 
-    padding: 8px 42px 8px 42px;
+    padding: 8px 45px 8px 42px;
 
     font-family:
         "Goudy Old Style",
         Georgia,
         serif;
 
-    font-size: 16px;
+    font-size: 15px;
+
+    color: #003d26;
+
+    background: white;
 
     border:
-        2px solid #005c34;
+        2px solid rgba(0, 80, 50, 0.7);
 
     border-radius: 30px;
 
     outline: none;
 
-    background: white;
-
-    color: #222;
-
     box-shadow:
-        0 5px 15px rgba(0,0,0,0.3);
+        0 5px 20px rgba(0,0,0,0.35);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .search:focus {
     border-color: #ffe600;
 
     box-shadow:
-        0 0 0 3px rgba(255,230,0,0.2),
-        0 5px 15px rgba(0,0,0,0.3);
+        0 0 0 3px rgba(255,230,0,0.18),
+        0 5px 20px rgba(0,0,0,0.35);
 }
 
 
@@ -188,41 +207,56 @@ header {
 .search-icon {
     position: absolute;
 
-    left: calc(50% - 175px + 15px);
-
     width: 17px;
     height: 17px;
 
-    z-index: 2;
+    left: calc(50% - 175px + 15px);
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 5;
+
+    opacity: 0.85;
+
+    pointer-events: none;
 }
 
 
-/* X-kuvake */
+/* X */
 
 .clear-icon {
     position: absolute;
 
-    right: calc(50% - 175px + 12px);
-
     width: 16px;
     height: 16px;
+
+    left: calc(50% + 175px - 32px);
+
+    top: 50%;
+
+    transform: translateY(-50%);
 
     cursor: pointer;
 
     visibility: hidden;
 
-    z-index: 2;
+    opacity: 0.8;
 }
 
 
 /* =========================================================
-   YLÄVALIKKO
+   6. YLÄVALIKKO
    ========================================================= */
 
 .alkuvalikko {
     width: 100%;
 
     min-height: 70px;
+
+    margin: 0;
+    padding: 10px 20px;
 
     display: flex;
 
@@ -232,10 +266,6 @@ header {
     flex-wrap: wrap;
 
     gap: 10px;
-
-    padding: 12px 20px;
-
-    margin: 0;
 
     background:
         linear-gradient(
@@ -249,10 +279,10 @@ header {
         1px solid rgba(255,255,255,0.12);
 
     border-bottom:
-        2px solid rgba(255,255,255,0.2);
+        1px solid rgba(255,255,255,0.18);
 
     box-shadow:
-        0 8px 25px rgba(0,0,0,0.4);
+        0 8px 25px rgba(0,0,0,0.35);
 
     position: relative;
 
@@ -262,30 +292,37 @@ header {
 
 /*
    TÄRKEÄ:
-   HTML:ssäsi .valikko1 on SUORAAN <a>-elementissä.
-   Siksi käytetään .valikko1 eikä .valikko1 a.
+   Sun HTML:ssä linkit ovat suoraan navin sisällä.
+
+   Eli:
+   <nav class="alkuvalikko">
+       <a class="valikko1">...</a>
+   </nav>
+
+   Ei:
+   .valikko1 a
 */
 
-.alkuvalikko > .valikko1,
-.valikko1 {
+
+.alkuvalikko a.valikko1 {
     display: inline-flex;
 
     align-items: center;
     justify-content: center;
 
-    min-height: 44px;
+    min-height: 42px;
 
-    padding: 9px 18px;
+    padding: 9px 17px;
 
-    color: white !important;
+    color: white;
 
     background:
         rgba(0,35,20,0.75);
 
     border:
-        1px solid rgba(255,255,255,0.45);
+        1px solid rgba(255,255,255,0.35);
 
-    border-radius: 30px;
+    border-radius: 25px;
 
     font-family:
         "Courier New",
@@ -300,34 +337,51 @@ header {
     white-space: nowrap;
 
     box-shadow:
-        0 4px 12px rgba(0,0,0,0.3);
+        0 4px 12px rgba(0,0,0,0.25);
+
+    transition:
+        0.2s ease;
 }
 
-.alkuvalikko > .valikko1:hover,
-.valikko1:hover {
-    color: #003d1e !important;
+
+.alkuvalikko a.valikko1:hover {
+    color: #003d26;
 
     background: #ffe600;
 
     border-color: #ffe600;
 
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 
     box-shadow:
         0 8px 20px rgba(0,0,0,0.45);
 }
 
 
-/* jos joskus käytät .valikko1:n sisällä linkkejä */
+/* =========================================================
+   7. PÄÄSISÄLLÖN YLEINEN KESKITYS
+   ========================================================= */
 
-.valikko1 a {
-    color: white;
-    text-decoration: none;
+/*
+   Tämä on tärkein osa.
+
+   Sisältöä EI työnnetä vasemmalle sivuvalikon takia.
+   Sivumenu on fixed ja kelluu sivun päällä.
+*/
+
+main {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 40px 25px 80px;
 }
 
 
 /* =========================================================
-   YLEINEN SISÄLTÖ
+   8. CONTAINER
    ========================================================= */
 
 .container {
@@ -336,40 +390,19 @@ header {
     margin: 40px auto;
 
     text-align: center;
-
-    text-shadow:
-        3px 3px 7px rgba(0,0,0,0.8);
 }
 
 
 /* =========================================================
-   TEKSTIT
-   ========================================================= */
-
-p {
-    max-width: 900px;
-
-    margin: 15px auto;
-
-    color: white;
-
-    font-family:
-        "Goudy Old Style",
-        Georgia,
-        serif;
-
-    font-size: 20px;
-
-    line-height: 1.65;
-}
-
-
-/* =========================================================
-   OTSIKOT
+   9. PÄÄOTSIKKO
    ========================================================= */
 
 h1 {
-    width: 100%;
+    width: min(1000px, 100%);
+
+    margin: 35px auto 30px;
+
+    padding: 22px 25px;
 
     color: white;
 
@@ -378,104 +411,156 @@ h1 {
         monospace;
 
     font-size:
-        clamp(2.4rem, 6vw, 4.5rem);
+        clamp(2.2rem, 5vw, 4.5rem);
+
+    line-height: 1.15;
 
     text-align: center;
-
-    margin: 35px auto 25px;
-
-    padding: 20px;
-
-    border-radius: 25px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(0,70,40,0.95),
-            rgba(0,35,20,0.95)
+            rgba(0,75,43,0.95),
+            rgba(0,35,20,0.97)
         );
 
     border:
         1px solid rgba(255,255,255,0.2);
+
+    border-radius: 25px;
 
     text-shadow:
         3px 4px 8px #000;
 
     box-shadow:
-        0 10px 30px rgba(0,0,0,0.3);
+        0 10px 30px rgba(0,0,0,0.35);
 }
 
 
+/* =========================================================
+   10. H2
+   ========================================================= */
+
 h2 {
-    color: white;
+    width: min(900px, 100%);
 
-    font-size:
-        clamp(2rem, 5vw, 3.2rem);
-
-    text-align: center;
-
-    margin: 30px auto 20px;
+    margin: 35px auto 20px;
 
     padding: 15px 20px;
 
-    border-radius: 25px;
+    color: white;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        clamp(1.8rem, 4vw, 3rem);
+
+    line-height: 1.2;
+
+    text-align: center;
 
     background:
         linear-gradient(
             135deg,
-            rgba(0,75,42,0.9),
-            rgba(0,45,27,0.9)
+            rgba(0,75,42,0.92),
+            rgba(0,45,27,0.95)
         );
 
     border:
-        1px solid rgba(255,255,255,0.2);
+        1px solid rgba(255,255,255,0.18);
+
+    border-radius: 22px;
 
     text-shadow:
         3px 3px 7px #000;
 
     box-shadow:
-        0 8px 25px rgba(0,0,0,0.25);
+        0 8px 25px rgba(0,0,0,0.28);
 }
 
 
+/* =========================================================
+   11. H3
+   ========================================================= */
+
 h3 {
+    margin: 25px auto;
+
     color: white;
 
-    font-size: 2rem;
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 1.8rem;
 
     text-align: center;
-
-    margin: 25px auto;
 
     text-shadow:
         3px 3px 7px #000;
 }
 
 
+/* =========================================================
+   12. H4
+   ========================================================= */
+
 h4 {
+    margin: 25px auto;
+
+    color: #ffe600;
+
     font-family:
         "Brush Script MT",
         "Segoe Script",
         cursive;
 
-    color: #ffe600;
-
     font-size:
-        clamp(3rem, 8vw, 7rem);
+        clamp(3rem, 7vw, 7rem);
+
+    font-style: italic;
 
     text-align: center;
 
-    margin: 20px auto;
-
     text-shadow:
-        5px 8px 8px #000;
-
-    font-style: italic;
+        5px 8px 10px #000;
 }
 
 
 /* =========================================================
-   KUVAT
+   13. LEIPÄTEKSTI
+   ========================================================= */
+
+p {
+    width: min(900px, 100%);
+
+    max-width: 900px;
+
+    margin: 18px auto;
+
+    color:
+        rgba(255,255,255,0.94);
+
+    font-family:
+        "Goudy Old Style",
+        Georgia,
+        serif;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+
+    text-align: center;
+
+    text-shadow:
+        2px 2px 5px rgba(0,0,0,0.65);
+}
+
+
+/* =========================================================
+   14. KAIKKI KUVAT KESKELLE
    ========================================================= */
 
 img {
@@ -484,16 +569,89 @@ img {
 }
 
 
+/* =========================================================
+   15. SAMMAKKO
+   ========================================================= */
+
+.sammakko {
+    display: block;
+
+    width: min(680px, 100%);
+
+    height: auto;
+
+    margin: 30px auto;
+
+    border: 2px solid #037f92;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 40px 10px rgba(6,252,200,0.45);
+
+    transition:
+        transform 0.3s ease;
+}
+
+.sammakko:hover {
+    transform:
+        scale(1.02);
+}
+
+
+/* =========================================================
+   16. UUSI KUVA
+   ========================================================= */
+
+.uusi {
+    display: block;
+
+    width: min(400px, 100%);
+
+    height: auto;
+
+    margin: 30px auto;
+
+    border:
+        3px double #1f7d43;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 60px rgba(0,0,0,0.75);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.uusi:hover {
+    transform:
+        scale(1.03);
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,0.9);
+}
+
+
+/* =========================================================
+   17. MUUT KUVAT
+   ========================================================= */
+
 .tennisqva,
 .rafa,
 .nuorena,
 .turnaus,
-.uusi,
-.mailat,
-.sammakko {
-    position: relative;
+.mailat {
+    display: block;
+
+    width: auto;
 
     max-width: 100%;
+
+    height: auto;
+
+    margin: 30px auto;
 
     border-radius: 25px;
 
@@ -507,25 +665,17 @@ img {
     border: 2px solid #80cfff;
 
     box-shadow:
-        0 15px 45px rgba(0,81,153,0.65);
-}
-
-.tennisqva:hover {
-    transform: scale(1.02);
+        0 15px 45px rgba(0,81,153,0.55);
 }
 
 
 .rafa {
-    max-width: 800px;
+    max-width: min(800px, 100%);
 
     border: 2px solid #4545c7;
 
     box-shadow:
-        0 15px 50px rgba(0,0,120,0.6);
-}
-
-.rafa:hover {
-    transform: scale(1.03);
+        0 15px 50px rgba(0,0,120,0.55);
 }
 
 
@@ -533,11 +683,7 @@ img {
     border: 2px solid #779944;
 
     box-shadow:
-        0 10px 45px rgba(150,145,80,0.55);
-}
-
-.nuorena:hover {
-    transform: scale(1.03);
+        0 10px 45px rgba(150,145,80,0.45);
 }
 
 
@@ -545,26 +691,7 @@ img {
     border: 2px solid #ff9d4d;
 
     box-shadow:
-        0 15px 45px rgba(199,80,57,0.6);
-}
-
-.turnaus:hover {
-    transform: scale(1.03);
-}
-
-
-.uusi {
-    width: 100%;
-    max-width: 400px;
-
-    border: 3px double #1f7d43;
-
-    box-shadow:
-        0 15px 60px rgba(0,0,0,0.75);
-}
-
-.uusi:hover {
-    transform: scale(1.03);
+        0 15px 45px rgba(199,80,57,0.5);
 }
 
 
@@ -572,60 +699,310 @@ img {
     border: 2px solid #ff9d4d;
 
     box-shadow:
-        0 10px 35px rgba(199,85,57,0.6);
+        0 10px 35px rgba(199,85,57,0.5);
 }
 
+
+.tennisqva:hover,
+.rafa:hover,
+.nuorena:hover,
+.turnaus:hover,
 .mailat:hover {
-    transform: scale(1.03);
-}
-
-
-.sammakko {
-    border: 2px solid #037f92;
-
-    box-shadow:
-        0 0 40px 10px #06fcc8;
-}
-
-.sammakko:hover {
-    transform: scale(1.03);
+    transform:
+        scale(1.02);
 }
 
 
 /* =========================================================
-   VANHAT VALIKOT
+   18. KUVA-TEKSTIT
    ========================================================= */
 
-nav {
-    list-style: none;
-}
+figcaption {
+    width: min(800px, 100%);
 
-
-.city {
-    background:
-        rgba(0,62,30,0.9);
-
-    font-family:
-        "Goudy Old Style",
-        Georgia,
-        serif;
+    margin: 10px auto 30px;
 
     text-align: center;
 
-    padding: 15px;
+    color:
+        rgba(255,255,255,0.75);
 
-    border:
-        1px double rgba(255,255,255,0.4);
-
-    border-radius: 30px;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.25);
+    font-size: 17px;
 }
 
 
 /* =========================================================
-   NAPIT
+   19. SISÄLTÖKORTIT
+   ========================================================= */
+
+.content-card,
+.info-card {
+    width: min(1000px, 100%);
+
+    margin: 35px auto;
+
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0,70,40,0.93),
+            rgba(0,40,25,0.97)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.17);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.35);
+
+    text-align: center;
+}
+
+
+.content-card h2,
+.info-card h2 {
+    width: 100%;
+
+    margin-top: 0;
+
+    background: none;
+
+    border: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   20. INFO CARDIN TEKSTIT
+   ========================================================= */
+
+.info-card p,
+.content-card p {
+    width: min(850px, 100%);
+
+    margin: 15px auto;
+
+    font-size: 20px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   21. IMAGE CARD
+   ========================================================= */
+
+.image-card,
+.main-image-box {
+    width: min(900px, 100%);
+
+    margin: 30px auto;
+
+    padding: 15px;
+
+    background:
+        rgba(0,20,12,0.6);
+
+    border:
+        1px solid rgba(255,255,255,0.15);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.4);
+
+    text-align: center;
+}
+
+
+.image-card img,
+.main-image-box img {
+    display: block;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    border-radius: 18px;
+
+    border:
+        2px solid rgba(255,255,255,0.35);
+}
+
+
+.image-caption {
+    margin-top: 15px;
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    text-align: center;
+}
+
+
+.image-source,
+.source-text {
+    margin-top: 5px;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+.image-source a,
+.source-text a {
+    color: #ffe600;
+}
+
+
+/* =========================================================
+   22. KENTTÄKORTIT
+   ========================================================= */
+
+.court-grid,
+.court-types {
+    width: min(900px, 100%);
+
+    margin: 30px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.court,
+.court-box {
+    padding: 22px 18px;
+
+    background:
+        rgba(0,29,18,0.75);
+
+    border:
+        1px solid rgba(255,255,255,0.14);
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,0.25);
+
+    transition:
+        0.25s ease;
+}
+
+
+.court:hover,
+.court-box:hover {
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(255,230,0,0.6);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.35);
+}
+
+
+.court h3,
+.court-box h3 {
+    margin: 8px 0;
+
+    color: #ffe600;
+
+    font-size: 21px;
+}
+
+
+.court p,
+.court-box p {
+    width: 100%;
+
+    margin: 0;
+
+    font-size: 16px !important;
+
+    line-height: 1.5 !important;
+}
+
+
+.court-top {
+    font-size: 38px;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================================================
+   23. KELTAINEN PAINIKE
+   ========================================================= */
+
+.yellow-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin: 18px auto 5px;
+
+    padding: 13px 24px;
+
+    color: #003d26 !important;
+
+    background: #ffe600;
+
+    border-radius: 30px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 7px 20px rgba(0,0,0,0.3);
+
+    transition:
+        0.2s ease;
+}
+
+
+.yellow-button:hover {
+    color: #003d26 !important;
+
+    background: white;
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================================
+   24. MUUT NAPIT
    ========================================================= */
 
 .foots,
@@ -635,92 +1012,162 @@ nav {
     align-items: center;
     justify-content: center;
 
-    color: white !important;
-
-    text-decoration: none !important;
-
-    border-radius: 40px;
-
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.2s ease,
-        box-shadow 0.25s ease;
-}
-
-
-.foots {
     min-width: 180px;
 
-    margin: 8px 10px;
+    margin: 8px;
 
     padding: 12px 25px;
 
-    font-size: 20px;
+    color: white !important;
 
     background:
         rgba(0,55,30,0.85);
 
     border:
-        1px solid white;
+        1px solid rgba(255,255,255,0.5);
+
+    border-radius: 40px;
+
+    text-decoration: none !important;
+
+    font-size: 18px;
+
+    transition:
+        0.2s ease;
 }
 
 
-.foots:hover {
-    background: #ffe600;
+.foots:hover,
+.lisaa:hover {
+    color: #003d26 !important;
 
-    color: #003d1e !important;
+    background: #ffe600;
 
     border-color: #ffe600;
 
-    transform: translateY(-4px);
+    transform:
+        translateY(-4px);
 
     box-shadow:
         0 8px 20px rgba(0,0,0,0.45);
 }
 
 
-.lisaa {
-    min-width: 180px;
+/* =========================================================
+   25. VANHA SIVUVALIKKO
+   ========================================================= */
 
-    margin: 10px;
+/*
+   TÄMÄ ON TÄRKEÄ MUUTOS:
 
-    padding: 14px 28px;
+   Sivuvalikko EI enää varaa tilaa pääsisällöltä.
 
-    font-size: 20px;
+   Se kelluu vasemmalla.
+*/
 
-    font-weight: bold;
+div.fixed {
+    position: fixed;
 
-    background: #00502c;
+    left: 0;
+
+    top: 50%;
+
+    bottom: auto;
+
+    transform:
+        translateY(-50%);
+
+    width: 190px;
+
+    margin: 0;
+
+    padding: 15px 10px;
+
+    z-index: 1000;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,60,37,0.98),
+            rgba(0,31,19,0.98)
+        );
 
     border:
-        2px solid rgba(255,255,255,0.7);
+        1px solid rgba(255,255,255,0.18);
+
+    border-left: none;
+
+    border-radius:
+        0 22px 22px 0;
+
+    box-shadow:
+        5px 0 30px rgba(0,0,0,0.45);
+
+    text-align: center;
 }
 
 
-.lisaa:hover {
+.valikko {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    width: 100%;
+
+    height: auto;
+
+    text-align: center;
+}
+
+
+.fixed a {
+    display: block;
+
+    width: 100%;
+
+    padding: 10px 7px;
+
+    color: white !important;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    transition:
+        0.2s ease;
+}
+
+
+.fixed a:hover {
+    color: #003d26 !important;
+
     background: #ffe600;
 
-    color: #003d1e !important;
-
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 10px 25px rgba(0,0,0,0.4);
+    transform:
+        translateX(5px);
 }
 
 
 /* =========================================================
-   VASEN SIVUVALIKKO - UUSI
+   26. UUSI SIVUVALIKKO
    ========================================================= */
 
 .inner-side-menu {
     position: fixed;
 
     left: 0;
+
     top: 50%;
 
-    transform: translateY(-50%);
+    transform:
+        translateY(-50%);
 
     width: 215px;
 
@@ -754,45 +1201,26 @@ nav {
 }
 
 
-.side-heading {
-    padding: 5px 0 12px;
-
-    color: #ffe600;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 13px;
-
-    text-align: center;
-
-    letter-spacing: 2px;
-}
-
-
 .inner-side-menu a {
     display: block;
 
     padding: 11px 8px;
+
+    color: white !important;
 
     border:
         1px solid transparent;
 
     border-radius: 14px;
 
-    color: white !important;
-
-    font-family:
-        "Goudy Old Style",
-        Georgia,
-        serif;
-
-    font-size: 17px;
+    font-size: 16px;
 
     text-align: center;
 
     text-decoration: none;
+
+    transition:
+        0.2s ease;
 }
 
 
@@ -801,10 +1229,8 @@ nav {
 
     background: #ffe600;
 
-    transform: translateX(5px);
-
-    box-shadow:
-        0 5px 15px rgba(0,0,0,0.35);
+    transform:
+        translateX(5px);
 }
 
 
@@ -812,55 +1238,53 @@ nav {
     color: #ffe600 !important;
 
     background:
-        rgba(255,230,0,0.10);
+        rgba(255,230,0,0.1);
 
     border-color:
         rgba(255,230,0,0.7);
-
-    box-shadow:
-        inset 0 0 15px rgba(255,230,0,0.08);
 }
 
 
 /* =========================================================
-   TÄRKEIN KOHTA:
-   PÄÄSISÄLTÖ KESKELLE
+   27. SISÄSIVUJEN MAIN
    ========================================================= */
+
+/*
+   HUOM:
+   Sivumenu on fixed, joten mainia EI työnnetä 250px oikealle.
+
+   Tämä korjaa juuri sen "kaikki on sivussa" -ongelman.
+*/
 
 .inner-main {
     width: min(1000px, calc(100% - 40px));
 
-    /*
-       EI margin-left: 250px;
-       Sivupalkki on fixed, joten se ei tarvitse
-       omaa tilaa pääsisällöstä.
-    */
+    max-width: 1000px;
 
     margin: 0 auto;
 
     padding: 45px 20px 80px;
-
-    box-sizing: border-box;
 }
 
 
 /* =========================================================
-   SIVUN PÄÄOTSIKKO
+   28. SISÄSIVUN OTSIKKO
    ========================================================= */
 
 .page-heading {
     width: 100%;
 
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 20px;
-
     margin: 0 auto 35px;
 
     padding: 20px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
 
     background:
         linear-gradient(
@@ -886,23 +1310,14 @@ nav {
 
     padding: 0;
 
-    color: white;
-
     background: none;
 
     border: none;
 
-    font-family:
-        "Courier New",
-        monospace;
+    box-shadow: none;
 
     font-size:
-        clamp(32px, 5vw, 55px);
-
-    text-shadow:
-        3px 4px 8px black;
-
-    box-shadow: none;
+        clamp(30px, 5vw, 55px);
 }
 
 
@@ -912,334 +1327,134 @@ nav {
 
 
 /* =========================================================
-   SISÄLTÖKORTIT
+   29. SISÄSIVUN LOGO
    ========================================================= */
 
-.info-card,
-.content-card {
-    width: 100%;
+.inner-header {
+    min-height: 245px;
 
-    margin: 0 auto 30px;
+    padding: 25px 20px;
 
-    padding: 35px;
+    display: flex;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(0,74,45,0.92),
-            rgba(0,38,24,0.97)
-        );
-
-    border:
-        1px solid rgba(255,255,255,0.15);
-
-    border-radius: 28px;
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,0.35);
-
-    text-align: center;
-}
-
-
-.info-card h2,
-.content-card h2 {
-    margin: 10px 0 20px;
-
-    padding: 0;
-
-    color: white;
-
-    background: none;
-
-    border: none;
-
-    box-shadow: none;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size:
-        clamp(26px, 4vw, 42px);
-
-    text-shadow:
-        3px 4px 8px black;
-}
-
-
-.info-card p,
-.content-card p {
-    max-width: 850px;
-
-    margin: 15px auto;
-
-    color:
-        rgba(255,255,255,0.92);
-
-    font-size: 20px;
-
-    line-height: 1.65;
-
-    text-align: center;
-}
-
-
-/* =========================================================
-   PIENI KELTAINEN OTSIKKO
-   ========================================================= */
-
-.small-heading {
-    display: inline-block;
-
-    padding: 7px 15px;
-
-    margin-bottom: 8px;
-
-    color: #ffe600;
-
-    border:
-        1px solid rgba(255,230,0,0.4);
-
-    border-radius: 20px;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 12px;
-
-    letter-spacing: 1px;
-}
-
-
-/* =========================================================
-   KUVA-KORTTI
-   ========================================================= */
-
-.main-image-box,
-.image-card {
-    width: 100%;
-
-    max-width: 900px;
-
-    margin: 30px auto;
-
-    padding: 14px;
-
-    background:
-        rgba(0,20,12,0.6);
-
-    border:
-        1px solid rgba(255,255,255,0.15);
-
-    border-radius: 25px;
-
-    box-shadow:
-        0 10px 35px rgba(0,0,0,0.4);
-
-    text-align: center;
-}
-
-
-.main-image-box img,
-.image-card img {
-    display: block;
-
-    width: 100%;
-
-    height: auto;
-
-    margin: 0 auto;
-
-    border-radius: 18px;
-
-    border:
-        2px solid rgba(255,255,255,0.4);
-}
-
-
-.main-image-box img:hover,
-.image-card img:hover {
-    transform: scale(1.015);
-}
-
-
-.image-caption,
-.image-card figcaption {
-    margin-top: 13px;
-
-    color: white;
-
-    font-size: 16px;
-}
-
-
-.image-source,
-.source-text {
-    margin-top: 5px;
-
-    color:
-        rgba(255,255,255,0.55);
-
-    font-size: 13px;
-}
-
-
-.image-source a,
-.source-text a {
-    color: #ffe600;
-}
-
-
-/* =========================================================
-   KENTTÄKORTIT
-   ========================================================= */
-
-.court-grid,
-.court-types {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 18px;
-
-    width: 100%;
-
-    max-width: 900px;
-
-    margin: 30px auto;
-}
-
-
-.court,
-.court-box {
-    padding: 22px 18px;
-
-    background:
-        rgba(0,29,18,0.72);
-
-    border:
-        1px solid rgba(255,255,255,0.13);
-
-    border-radius: 22px;
-
-    transition: 0.25s ease;
-
-    text-align: center;
-}
-
-
-.court:hover,
-.court-box:hover {
-    transform: translateY(-7px);
-
-    border-color:
-        rgba(255,230,0,0.6);
-
-    box-shadow:
-        0 10px 25px rgba(0,0,0,0.35);
-}
-
-
-.court-top {
-    font-size: 38px;
-
-    margin-bottom: 5px;
-}
-
-
-.court h3,
-.court-box h3 {
-    margin: 8px 0;
-
-    color: #ffe600;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 21px;
-}
-
-
-.court p,
-.court-box p {
-    margin: 0;
-
-    font-size: 16px !important;
-
-    line-height: 1.5 !important;
-}
-
-
-/* =========================================================
-   KELTAINEN PAINIKE
-   ========================================================= */
-
-.yellow-button {
-    display: inline-flex;
+    flex-direction: column;
 
     align-items: center;
 
     justify-content: center;
 
-    gap: 10px;
+    text-align: center;
 
-    margin-top: 18px;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,70,43,0.98),
+            rgba(0,43,27,0.98)
+        );
 
-    padding: 13px 24px;
+    border-bottom:
+        1px solid rgba(255,255,255,0.18);
 
-    color: #003d26 !important;
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.35);
+}
 
-    background: #ffe600;
 
-    border-radius: 30px;
+.inner-logo {
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-style: italic;
+
+    font-weight: bold;
+
+    font-size:
+        clamp(55px, 7vw, 95px);
+
+    line-height: 1;
+
+    color: #ffe600;
+
+    text-shadow:
+        3px 4px 0 #00351f,
+        5px 8px 15px rgba(0,0,0,0.75);
+}
+
+
+.inner-logo span {
+    color: white;
+
+    margin: 0 8px;
+}
+
+
+.inner-subtitle {
+    margin-top: 14px;
+
+    color:
+        rgba(255,255,255,0.65);
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 16px;
+    font-size: 11px;
 
-    font-weight: bold;
-
-    text-decoration: none;
-
-    box-shadow:
-        0 7px 20px rgba(0,0,0,0.3);
-}
-
-
-.yellow-button:hover {
-    color: #003d26 !important;
-
-    background: white;
-
-    transform: translateY(-3px);
+    letter-spacing: 4px;
 }
 
 
 /* =========================================================
-   ERIKOISKORTTI
+   30. SISÄSIVUN HAKU
    ========================================================= */
 
-.special-card {
-    border-color:
-        rgba(255,230,0,0.3);
+.inner-search {
+    position: relative;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(0,88,50,0.95),
-            rgba(0,40,25,0.98)
-        );
+    width: min(480px, 90%);
+
+    margin: 0 auto 22px;
 }
 
 
+.inner-search input {
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 48px;
+
+    border:
+        2px solid rgba(255,255,255,0.35);
+
+    border-radius: 30px;
+
+    outline: none;
+
+    background: rgba(255,255,255,0.96);
+
+    color: #003d26;
+
+    font-family:
+        "Goudy Old Style",
+        Georgia,
+        serif;
+
+    font-size: 17px;
+
+    box-shadow:
+        0 6px 25px rgba(0,0,0,0.35);
+}
+
+
+/* =========================================================
+   31. QUOTE
+   ========================================================= */
+
 .tennis-quote {
-    max-width: 700px;
+    width: min(700px, 100%);
 
     margin: 30px auto 5px;
 
@@ -1258,11 +1473,13 @@ nav {
     font-size: 23px;
 
     font-style: italic;
+
+    text-align: center;
 }
 
 
 /* =========================================================
-   MUUT LINKIT
+   32. MUUT SIVUT
    ========================================================= */
 
 .other-pages {
@@ -1275,6 +1492,8 @@ nav {
     flex-wrap: wrap;
 
     gap: 14px;
+
+    margin: 30px auto;
 }
 
 
@@ -1300,31 +1519,13 @@ nav {
 
     background: #ffe600;
 
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 }
 
 
 /* =========================================================
-   FLEX
-   ========================================================= */
-
-.flex-container,
-.flex-container1 {
-    width: 100%;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 20px;
-}
-
-
-/* =========================================================
-   FOOTER
+   33. FOOTER
    ========================================================= */
 
 footer,
@@ -1336,7 +1537,7 @@ footer,
     padding: 35px 20px;
 
     background:
-        rgba(0,25,15,0.9);
+        rgba(0,25,15,0.95);
 
     border-top:
         1px solid rgba(255,255,255,0.15);
@@ -1353,37 +1554,12 @@ footer,
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     flex-wrap: wrap;
 
-    gap: 12px;
-}
-
-
-.footer-buttons a {
-    padding: 11px 20px;
-
-    color: white;
-
-    background:
-        rgba(0,55,34,0.8);
-
-    border:
-        1px solid rgba(255,255,255,0.35);
-
-    border-radius: 30px;
-
-    text-decoration: none;
-}
-
-
-.footer-buttons a:hover {
-    color: #003d26;
-
-    background: #ffe600;
-
-    transform: translateY(-3px);
+    gap: 10px;
 }
 
 
@@ -1402,54 +1578,7 @@ footer,
 
 
 /* =========================================================
-   VANHA KIINTEÄ VALIKKO
-   ========================================================= */
-
-.valikko {
-    display: flex;
-
-    flex-direction: column;
-
-    position: sticky;
-
-    top: 10px;
-
-    text-align: center;
-
-    z-index: 5;
-}
-
-
-div.fixed {
-    width: 190px;
-
-    position: fixed;
-
-    left: 10px;
-
-    bottom: 40px;
-
-    margin: 0;
-
-    z-index: 20;
-}
-
-
-div.flex_fixed {
-    position: fixed;
-
-    bottom: 30px;
-
-    right: 30px;
-
-    width: 300px;
-
-    z-index: 20;
-}
-
-
-/* =========================================================
-   TAUSTAKUVAT
+   34. TAUSTAKUVAT
    ========================================================= */
 
 h1 {
@@ -1480,2576 +1609,8 @@ h2 {
 }
 
 
-.container3 {
-    background-image:
-        linear-gradient(
-            rgba(0,30,15,0.35),
-            rgba(0,30,15,0.65)
-        ),
-        url("tenniskuvia/palloa.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-
-    border-radius: 25px;
-}
-
-
 /* =========================================================
-   MUUT TEKSTIT
-   ========================================================= */
-
-div.ylateksti {
-    font-size: 70px;
-
-    text-align: center;
-}
-
-
-/* =========================================================
-   TABLETTI
-   ========================================================= */
-
-@media (max-width: 1100px) {
-
-    .inner-side-menu {
-        display: none;
-    }
-
-    .inner-main {
-        width: min(1000px, calc(100% - 30px));
-
-        margin: 0 auto;
-
-        padding:
-            35px 15px 60px;
-    }
-
-    .court-grid,
-    .court-types {
-        grid-template-columns: 1fr;
-    }
-
-    .container {
-        width: 92%;
-    }
-
-    p {
-        font-size: 19px;
-    }
-
-    .alkuvalikko {
-        gap: 8px;
-    }
-
-    .valikko1 {
-        font-size: 13px;
-
-        padding: 8px 13px;
-    }
-}
-
-
-/* =========================================================
-   PUHELIN
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    header {
-        padding: 15px 10px 25px;
-    }
-
-
-    .logo {
-        width: 90%;
-
-        margin: 10px auto;
-    }
-
-
-    .wrapper {
-        margin-bottom: 10px;
-    }
-
-
-    .search {
-        width: 90%;
-
-        height: 44px;
-
-        font-size: 15px;
-    }
-
-
-    .search-icon {
-        left: 7%;
-
-        width: 16px;
-    }
-
-
-    .clear-icon {
-        right: 7%;
-
-        width: 15px;
-    }
-
-
-    .alkuvalikko {
-        min-height: auto;
-
-        padding: 10px;
-
-        flex-direction: column;
-
-        gap: 7px;
-    }
-
-
-    .alkuvalikko > .valikko1,
-    .valikko1 {
-        width: 100%;
-
-        max-width: 400px;
-
-        min-height: 42px;
-
-        font-size: 14px;
-
-        padding: 9px 12px;
-    }
-
-
-    .container {
-        width: 94%;
-
-        margin-top: 25px;
-    }
-
-
-    .inner-main {
-        width: calc(100% - 20px);
-
-        margin: 0 auto;
-
-        padding:
-            25px 10px 50px;
-    }
-
-
-    .page-heading {
-        gap: 8px;
-
-        padding: 17px 10px;
-
-        border-radius: 18px;
-    }
-
-
-    .page-heading h1 {
-        font-size: 28px;
-    }
-
-
-    .page-heading span {
-        font-size: 20px;
-    }
-
-
-    .info-card,
-    .content-card {
-        padding: 25px 17px;
-
-        border-radius: 22px;
-    }
-
-
-    .info-card h2,
-    .content-card h2 {
-        font-size: 1.8rem;
-    }
-
-
-    .info-card p,
-    .content-card p {
-        font-size: 18px;
-
-        line-height: 1.55;
-    }
-
-
-    h1 {
-        font-size: 2.2rem;
-
-        margin-top: 20px;
-
-        padding: 18px 10px;
-
-        border-radius: 18px;
-    }
-
-
-    h2 {
-        font-size: 1.7rem;
-
-        border-radius: 18px;
-    }
-
-
-    h3 {
-        font-size: 1.4rem;
-    }
-
-
-    h4 {
-        font-size: 3.5rem;
-    }
-
-
-    p {
-        font-size: 18px;
-
-        line-height: 1.55;
-    }
-
-
-    .main-image-box,
-    .image-card {
-        padding: 9px;
-
-        border-radius: 20px;
-    }
-
-
-    .court-grid,
-    .court-types {
-        grid-template-columns: 1fr;
-
-        gap: 14px;
-    }
-
-
-    .foots {
-        width: 100%;
-
-        max-width: 350px;
-
-        margin: 6px auto;
-
-        font-size: 18px;
-    }
-
-
-    .lisaa {
-        width: 100%;
-
-        max-width: 350px;
-
-        margin: 7px auto;
-    }
-
-
-    div.fixed,
-    div.flex_fixed {
-        display: none;
-    }
-
-
-    footer,
-    .inner-footer {
-        margin-top: 40px;
-
-        padding: 25px 15px;
-    }
-
-
-    .footer-buttons {
-        flex-direction: column;
-    }
-
-
-    .footer-buttons a {
-        width: 80%;
-
-        text-align: center;
-    }
-}
-
-
-/* =========================================================
-   ERITTÄIN PIENI PUHELIN
-   ========================================================= */
-
-@media (max-width: 380px) {
-
-    .inner-main {
-        width: calc(100% - 10px);
-
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-
-
-    h1 {
-        font-size: 1.9rem;
-    }
-
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-
-    p {
-        font-size: 17px;
-    }
-
-
-    .valikko1 {
-        font-size: 13px;
-    }
-}/* =========================================================
-   TENNIS 4 LIFE
-   UUSI TYYLII.CSS
-   ========================================================= */
-
-
-/* =========================================================
-   PERUSASETUKSET
-   ========================================================= */
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-
-    background:
-        linear-gradient(
-            180deg,
-            #002f1b 0%,
-            #003d1e 45%,
-            #002d18 100%
-        );
-
-    color: white;
-
-    font-family: "Goudy Old Style", Georgia, serif;
-
-    min-height: 100vh;
-}
-
-
-/* =========================================================
-   LINKIT
-   ========================================================= */
-
-a {
-    color: white;
-    transition:
-        color 0.2s ease,
-        background 0.2s ease,
-        transform 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-a:visited {
-    color: white;
-}
-
-a:hover {
-    color: #ffe600;
-}
-
-a:active {
-    color: #9cffbd;
-}
-
-
-/* =========================================================
-   YLÄOSA / HEADER
-   ========================================================= */
-
-header {
-    width: 100%;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            rgba(0, 45, 25, 0.55),
-            rgba(0, 45, 25, 0.75)
-        );
-
-    padding: 25px 20px 30px;
-
-    border-bottom: 1px solid rgba(255,255,255,0.12);
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.25);
-}
-
-
-/* =========================================================
-   LOGO
-   ========================================================= */
-
-.logo {
-    display: block;
-
-    max-width: 500px;
-    width: min(70%, 500px);
-
-    height: auto;
-
-    margin: 15px auto;
-
-    position: relative;
-    left: auto;
-
-    object-fit: contain;
-
-    filter:
-        drop-shadow(0 8px 8px rgba(0,0,0,0.55));
-
-    transition:
-        transform 0.3s ease,
-        filter 0.3s ease;
-}
-
-.logo:hover {
-    transform: scale(1.03);
-
-    filter:
-        drop-shadow(0 10px 15px rgba(0,0,0,0.7));
-}
-
-
-/* =========================================================
-   HAKUPALKI
-   ========================================================= */
-
-.wrapper {
-    width: 100%;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    position: relative;
-
-    margin: 5px auto 15px;
-}
-
-.search {
-    width: min(350px, 80%);
-
-    height: 48px;
-
-    padding: 8px 45px 8px 15px;
-
-    font-size: 16px;
-
-    border: 2px solid #005c34;
-
-    border-radius: 12px;
-
-    outline: none;
-
-    background: white;
-
-    color: #222;
-
-    box-shadow:
-        0 5px 15px rgba(0,0,0,0.3);
-
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.search:focus {
-    border-color: #ffe600;
-
-    box-shadow:
-        0 0 0 3px rgba(255,230,0,0.2),
-        0 5px 15px rgba(0,0,0,0.3);
-}
-
-.clear-icon {
-    position: absolute;
-
-    right: calc(10% + 5px);
-
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    width: 20px;
-
-    cursor: pointer;
-
-    visibility: hidden;
-}
-
-
-/* =========================================================
-   UUSI YLÄVALIKKO
-   ========================================================= */
-
-.alkuvalikko {
-    width: 100%;
-
-    min-height: 78px;
-
-    display: flex !important;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            90deg,
-            #002d19,
-            #00512d,
-            #002d19
-        );
-
-    border-top: 1px solid rgba(255,255,255,0.12);
-
-    border-bottom: 2px solid rgba(255,255,255,0.2);
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.4);
-
-    padding: 10px 20px;
-
-    margin: 0;
-
-    position: relative;
-
-    z-index: 10;
-}
-
-
-/* =========================================================
-   YLÄVALIKON SISÄLTÖ
-   ========================================================= */
-
-.valikko1 {
-    width: 100%;
-
-    display: flex !important;
-
-    flex-direction: row !important;
-
-    align-items: center;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 12px;
-
-    margin: 0 !important;
-
-    padding: 0 !important;
-
-    border: none !important;
-
-    background: transparent !important;
-
-    text-align: center;
-
-    float: none !important;
-
-    box-shadow: none !important;
-}
-
-
-/* =========================================================
-   YLÄVALIKON NAPIT
-   ========================================================= */
-
-.valikko1 a {
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    min-height: 45px;
-
-    padding: 10px 19px;
-
-    color: white;
-
-    background:
-        rgba(0,35,20,0.75);
-
-    border: 1px solid rgba(255,255,255,0.55);
-
-    border-radius: 30px;
-
-    font-family: "Courier New", monospace;
-
-    font-size: 15px;
-
-    font-weight: normal;
-
-    text-decoration: none;
-
-    text-align: center;
-
-    white-space: nowrap;
-
-    box-shadow:
-        0 4px 12px rgba(0,0,0,0.3);
-}
-
-.valikko1 a:hover {
-    background: #ffe600;
-
-    color: #003d1e;
-
-    border-color: #ffe600;
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 8px 20px rgba(0,0,0,0.45);
-
-    text-decoration: none;
-}
-
-.valikko1 a:active {
-    transform: translateY(0);
-}
-
-
-/* =========================================================
-   YLEINEN SISÄLTÖ
-   ========================================================= */
-
-.container {
-    width: min(1100px, 92%);
-
-    margin: 40px auto;
-
-    text-align: center;
-
-    text-shadow:
-        3px 3px 7px rgba(0,0,0,0.8);
-}
-
-
-/* =========================================================
-   LEIPÄTEKSTI
-   ========================================================= */
-
-p {
-    max-width: 1000px;
-
-    margin: 15px auto;
-
-    font-size: 22px;
-
-    font-style: normal;
-
-    font-family:
-        "Goudy Old Style",
-        Georgia,
-        serif;
-
-    color: white;
-
-    line-height: 1.7;
-}
-
-
-/* =========================================================
-   OTSIKOT
-   ========================================================= */
-
-h1 {
-    color: white;
-
-    font-size: clamp(2.8rem, 7vw, 5rem);
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    text-align: center;
-
-    margin: 35px auto 25px;
-
-    padding: 25px;
-
-    border-radius: 25px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(0,70,40,0.95),
-            rgba(0,35,20,0.95)
-        );
-
-    border: 1px solid rgba(255,255,255,0.2);
-
-    text-shadow:
-        3px 4px 8px #000;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.3);
-}
-
-
-h2 {
-    color: white;
-
-    font-size: clamp(2rem, 5vw, 3.2rem);
-
-    text-align: center;
-
-    margin: 30px auto 20px;
-
-    padding: 15px 20px;
-
-    border-radius: 25px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(0,75,42,0.9),
-            rgba(0,45,27,0.9)
-        );
-
-    border: 1px solid rgba(255,255,255,0.2);
-
-    text-shadow:
-        3px 3px 7px #000;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.25);
-}
-
-
-h3 {
-    color: white;
-
-    font-size: 2rem;
-
-    text-align: center;
-
-    margin: 25px auto;
-
-    text-shadow:
-        3px 3px 7px #000;
-
-    text-decoration:
-        underline;
-
-    text-decoration-color:
-        white;
-}
-
-
-h4 {
-    font-family:
-        "Brush Script MT",
-        cursive;
-
-    color: #ffe600;
-
-    font-size: clamp(3rem, 8vw, 7rem);
-
-    text-align: center;
-
-    margin: 20px auto;
-
-    text-shadow:
-        5px 8px 8px #000;
-
-    font-style: italic;
-
-    position: relative;
-
-    top: auto;
-    left: auto;
-}
-
-
-/* =========================================================
-   KUVAT
-   ========================================================= */
-
-img {
-    max-width: 100%;
-
-    height: auto;
-}
-
-
-.tennisqva {
-    position: relative;
-
-    max-width: 100%;
-
-    border-radius: 25px;
-
-    border: 2px solid #80cfff;
-
-    box-shadow:
-        0 15px 45px rgba(0,81,153,0.65);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.tennisqva:hover {
-    transform: translateY(-5px) scale(1.02);
-
-    box-shadow:
-        0 20px 55px rgba(0,81,153,0.8);
-}
-
-
-.rafa {
-    position: relative;
-
-    max-width: min(800px, 100%);
-
-    border-radius: 25px;
-
-    border: 2px solid #4545c7;
-
-    box-shadow:
-        0 15px 50px rgba(0,0,120,0.6);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.rafa:hover {
-    transform: scale(1.03);
-
-    box-shadow:
-        0 20px 60px rgba(0,0,150,0.75);
-}
-
-
-.nuorena {
-    position: relative;
-
-    max-width: 100%;
-
-    border-radius: 25px;
-
-    border: 2px solid #779944;
-
-    box-shadow:
-        0 10px 45px rgba(150,145,80,0.55);
-
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease;
-}
-
-.nuorena:hover {
-    transform: scale(1.03);
-
-    border-color: #c4ff54;
-}
-
-
-.turnaus {
-    position: relative;
-
-    max-width: 100%;
-
-    border-radius: 25px;
-
-    border: 2px solid #ff9d4d;
-
-    box-shadow:
-        0 15px 45px rgba(199,80,57,0.6);
-
-    transition:
-        transform 0.3s ease;
-}
-
-.turnaus:hover {
-    transform: scale(1.03);
-}
-
-
-.uusi {
-    position: relative;
-
-    max-width: 400px;
-
-    width: 100%;
-
-    border-radius: 30px;
-
-    border: 3px double #1f7d43;
-
-    box-shadow:
-        0 15px 60px rgba(0,0,0,0.75);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.uusi:hover {
-    transform: scale(1.05);
-
-    box-shadow:
-        0 20px 70px rgba(0,0,0,0.9);
-}
-
-
-.mailat {
-    position: relative;
-
-    max-width: 100%;
-
-    border-radius: 25px;
-
-    border: 2px solid #ff9d4d;
-
-    box-shadow:
-        0 10px 35px rgba(199,85,57,0.6);
-
-    transition:
-        transform 0.3s ease;
-}
-
-.mailat:hover {
-    transform: scale(1.03);
-}
-
-
-/* =========================================================
-   NAV / MUUT VALIKOT
-   ========================================================= */
-
-nav {
-    list-style: none;
-}
-
-
-.city {
-    background:
-        rgba(0,62,30,0.9);
-
-    font-family:
-        "Goudy Old Style",
-        Georgia,
-        serif;
-
-    list-style-type: none;
-
-    text-align: center;
-
-    min-height: 60px;
-
-    padding: 15px;
-
-    border: 1px double rgba(255,255,255,0.4);
-
-    border-radius: 30px;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.25);
-}
-
-
-/* =========================================================
-   ALAVALIKON NELJÄ NAPPIA
-   ========================================================= */
-
-.foots {
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    color: white !important;
-
-    text-decoration: none !important;
-
-    font-size: 20px;
-
-    font-family:
-        "Goudy Old Style",
-        Georgia,
-        serif;
-
-    border: 1px solid white;
-
-    padding: 12px 25px;
-
-    background:
-        rgba(0,55,30,0.85);
-
-    margin: 8px 10px;
-
-    min-width: 180px;
-
-    border-radius: 40px;
-
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.2s ease,
-        box-shadow 0.25s ease,
-        border-color 0.25s ease;
-}
-
-
-.foots:hover {
-    background: #ffe600;
-
-    color: #003d1e !important;
-
-    border-color: #ffe600;
-
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 8px 20px rgba(0,0,0,0.45);
-}
-
-
-/* Käyty sivu */
-
-.foots.visited-page {
-    background: #00552f;
-
-    color: #ffe600 !important;
-
-    border-color: #ffe600;
-
-    box-shadow:
-        0 0 15px rgba(255,230,0,0.3);
-}
-
-
-.foots.visited-page::after {
-    content: " ✓";
-
-    color: #ffe600;
-
-    font-weight: bold;
-}
-
-
-.foots.visited-page:hover {
-    background: #00834a;
-
-    color: white !important;
-
-    border-color: white;
-}
-
-
-/* =========================================================
-   ISOMMAT NAPIT
-   ========================================================= */
-
-.lisaa {
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    color: white !important;
-
-    font-size: 20px;
-
-    font-weight: bold;
-
-    text-decoration: none !important;
-
-    border: 2px solid rgba(255,255,255,0.7);
-
-    padding: 14px 28px;
-
-    background:
-        #00502c;
-
-    margin: 10px;
-
-    min-width: 180px;
-
-    border-radius: 50px;
-
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.2s ease,
-        box-shadow 0.25s ease;
-}
-
-
-.lisaa:hover {
-    background: #ffe600;
-
-    color: #003d1e !important;
-
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 10px 25px rgba(0,0,0,0.4);
-}
-
-
-/* =========================================================
-   FIXED / SIVUVALIKKO
-   ========================================================= */
-
-.valikko {
-    display: flex;
-
-    flex-direction: column;
-
-    position: sticky;
-
-    top: 10px;
-
-    text-align: center;
-
-    color: white;
-
-    font-size: 18px;
-
-    text-shadow:
-        3px 3px 6px #000;
-
-    height: auto;
-
-    z-index: 5;
-}
-
-
-div.fixed {
-    width: 190px;
-
-    position: fixed;
-
-    left: 10px;
-
-    bottom: 40px;
-
-    margin: 0;
-
-    z-index: 20;
-}
-
-
-.fixed {
-    text-shadow:
-        3px 3px 6px #000;
-
-    font-size: 18px;
-
-    font-style: italic;
-}
-
-
-/* =========================================================
-   FLEX-KONTIT
-   ========================================================= */
-
-.flex-container {
-    display: flex;
-
-    width: 100%;
-
-    align-items: center;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 20px;
-}
-
-
-.flex-container1 {
-    display: flex;
-
-    width: 100%;
-
-    justify-content: center;
-
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 20px;
-}
-
-
-div.flex_fixed {
-    position: fixed;
-
-    bottom: 30px;
-
-    right: 30px;
-
-    width: 300px;
-
-    height: auto;
-
-    border: none;
-
-    margin: 0;
-
-    text-shadow:
-        3px 3px 6px #000;
-
-    z-index: 20;
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-    width: 100%;
-
-    text-align: center;
-
-    margin-top: 60px;
-
-    padding: 35px 20px;
-
-    background:
-        rgba(0,25,15,0.9);
-
-    border-top:
-        1px solid rgba(255,255,255,0.15);
-
-    box-shadow:
-        0 -5px 20px rgba(0,0,0,0.2);
-}
-
-
-/* =========================================================
-   LINKIT / MUUT TEKSTIT
-   ========================================================= */
-
-div.ylateksti {
-    font-size: 70px;
-
-    text-align: center;
-
-    right: auto;
-}
-
-
-a {
-    text-underline-offset: 4px;
-}
-
-
-/* =========================================================
-   TAUSTAKUVAT
-   ========================================================= */
-
-h1 {
-    background-image:
-        linear-gradient(
-            rgba(0,40,25,0.65),
-            rgba(0,40,25,0.85)
-        ),
-        url("tenniskuvia/night.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-}
-
-
-h2 {
-    background-image:
-        linear-gradient(
-            rgba(0,55,30,0.7),
-            rgba(0,35,20,0.85)
-        ),
-        url("tenniskuvia/night.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-}
-
-
-.container3 {
-    background-image:
-        linear-gradient(
-            rgba(0,30,15,0.35),
-            rgba(0,30,15,0.65)
-        ),
-        url("tenniskuvia/palloa.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-
-    border-radius: 25px;
-}
-
-
-/* =========================================================
-   SAMMAKKO
-   ========================================================= */
-
-.sammakko {
-    position: relative;
-
-    max-width: 100%;
-
-    border-radius: 25px;
-
-    box-shadow:
-        0 0 40px 10px #06fcc8;
-
-    border: 2px solid #037f92;
-
-    transition:
-        transform 0.3s ease;
-}
-
-.sammakko:hover {
-    transform: scale(1.03);
-}
-
-
-/* =========================================================
-   TABLETTI
-   ========================================================= */
-
-@media (max-width: 1100px) {
-
-    .valikko1 {
-        gap: 8px;
-    }
-
-    .valikko1 a {
-        font-size: 14px;
-
-        padding: 9px 14px;
-    }
-
-    .container {
-        width: 92%;
-    }
-
-    p {
-        font-size: 20px;
-    }
-
-    .foots {
-        min-width: 160px;
-
-        font-size: 18px;
-    }
-}
-
-
-/* =========================================================
-   PIENEMPI NÄYTTÖ
-   ========================================================= */
-
-@media (max-width: 800px) {
-
-    header {
-        padding: 20px 15px 25px;
-    }
-
-    .logo {
-        width: min(85%, 420px);
-    }
-
-    .alkuvalikko {
-        padding: 12px;
-    }
-
-    .valikko1 {
-        flex-wrap: wrap !important;
-
-        gap: 8px;
-    }
-
-    .valikko1 a {
-        font-size: 13px;
-
-        padding: 9px 13px;
-    }
-
-    h1 {
-        font-size: 2.7rem;
-
-        padding: 20px 12px;
-    }
-
-    h2 {
-        font-size: 2rem;
-
-        padding: 14px;
-    }
-
-    h3 {
-        font-size: 1.6rem;
-    }
-
-    p {
-        font-size: 19px;
-
-        line-height: 1.6;
-    }
-
-    div.fixed {
-        display: none;
-    }
-
-    div.flex_fixed {
-        display: none;
-    }
-}
-
-
-/* =========================================================
-   PUHELIN
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    .wrapper {
-        margin-bottom: 10px;
-    }
-
-    .search {
-        width: 90%;
-
-        height: 44px;
-
-        font-size: 15px;
-    }
-
-    .logo {
-        width: 90%;
-
-        margin: 10px auto;
-    }
-
-    .alkuvalikko {
-        min-height: auto;
-
-        padding: 10px;
-    }
-
-    .valikko1 {
-        flex-direction: column !important;
-
-        width: 100%;
-
-        gap: 7px;
-    }
-
-    .valikko1 a {
-        width: 100%;
-
-        max-width: 400px;
-
-        min-height: 42px;
-
-        font-size: 14px;
-
-        padding: 9px 12px;
-    }
-
-    .container {
-        width: 94%;
-
-        margin-top: 25px;
-    }
-
-    h1 {
-        font-size: 2.2rem;
-
-        margin-top: 20px;
-
-        padding: 18px 10px;
-
-        border-radius: 18px;
-    }
-
-    h2 {
-        font-size: 1.7rem;
-
-        border-radius: 18px;
-    }
-
-    h3 {
-        font-size: 1.4rem;
-    }
-
-    h4 {
-        font-size: 3.5rem;
-    }
-
-    p {
-        font-size: 18px;
-
-        line-height: 1.55;
-    }
-
-    .foots {
-        width: 100%;
-
-        max-width: 350px;
-
-        margin: 6px auto;
-
-        font-size: 18px;
-    }
-
-    .lisaa {
-        width: 100%;
-
-        max-width: 350px;
-
-        margin: 7px auto;
-    }
-
-    .tennisqva,
-    .rafa,
-    .nuorena,
-    .turnaus,
-    .uusi,
-    .mailat {
-        max-width: 100%;
-    }
-
-    footer {
-        margin-top: 40px;
-
-        padding: 25px 15px;
-    }
-}
-
-
-/* =========================================================
-   ERITTÄIN PIENI PUHELIN
-   ========================================================= */
-
-@media (max-width: 380px) {
-
-    h1 {
-        font-size: 1.9rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    p {
-        font-size: 17px;
-    }
-
-    .valikko1 a {
-        font-size: 13px;
-    }
-}
-
-SISÄLTÖKORTIT
-   ========================================================= */
-
-.content-card {
-    width: min(1000px, 100%);
-
-    margin: 35px auto;
-
-    padding: 35px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(0,70,40,0.92),
-            rgba(0,40,25,0.95)
-        );
-
-    border: 1px solid rgba(255,255,255,0.18);
-
-    border-radius: 30px;
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,0.35);
-
-    text-align: center;
-}
-
-
-.content-card h2 {
-    margin-top: 0;
-}
-
-
-/* =========================================================
-   KUVA-KORTTI
-   ========================================================= */
-
-.image-card {
-    margin: 30px auto;
-
-    padding: 20px;
-
-    background:
-        rgba(0,25,15,0.5);
-
-    border-radius: 25px;
-
-    border: 1px solid rgba(255,255,255,0.12);
-
-    max-width: 900px;
-}
-
-
-.image-card .tennisqva {
-    display: block;
-
-    width: min(850px, 100%);
-
-    margin: 0 auto;
-}
-
-
-.image-caption {
-    margin-top: 20px;
-
-    font-size: 18px;
-
-    font-style: italic;
-}
-
-
-.source-text {
-    font-size: 15px;
-
-    opacity: 0.75;
-}
-
-
-.source-text a {
-    color: #ffe600;
-}
-
-
-/* =========================================================
-   KENTTÄTYYPPIEN KORTIT
-   ========================================================= */
-
-.court-types {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 18px;
-
-    margin: 30px auto;
-
-    max-width: 900px;
-}
-
-
-.court-box {
-    padding: 22px;
-
-    background:
-        rgba(0,35,20,0.8);
-
-    border:
-        1px solid rgba(255,255,255,0.18);
-
-    border-radius: 22px;
-
-    box-shadow:
-        0 6px 18px rgba(0,0,0,0.25);
-
-    transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        border-color 0.25s ease;
-}
-
-
-.court-box:hover {
-    transform: translateY(-6px);
-
-    background:
-        rgba(0,75,42,0.9);
-
-    border-color:
-        rgba(255,230,0,0.6);
-}
-
-
-.court-box h3 {
-    margin-top: 0;
-
-    font-size: 1.5rem;
-}
-
-
-.court-box p {
-    font-size: 17px;
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-.footer-links {
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 5px;
-}
-
-
-/* =========================================================
-   PUHELIN
-   ========================================================= */
-
-@media (max-width: 750px) {
-
-    .content-card {
-        padding: 22px 15px;
-
-        border-radius: 22px;
-    }
-
-    .court-types {
-        grid-template-columns: 1fr;
-    }
-
-    .court-box p {
-        font-size: 17px;
-    }
-
-    .footer-links {
-        flex-direction: column;
-    }
-
-    .footer-links .foots {
-        width: min(350px, 90%);
-    }
-}
-Mitä tällä saat?
-
-Sun yleisesti.html ei enää näytä pelkältä tekstisivulta, vaan rakenteeltaan suunnilleen:
-
-┌──────────────────────────────────────────────┐
-│                  🔍 Haku                     │
-│                                              │
-│              TENNIS 4 LIFE                  │
-├──────────────────────────────────────────────┤
-│ Etusivu │ Tennis │ Minä │ Kilpailut │ ...   │
-└──────────────────────────────────────────────┘
-
-
-              TENNIS YLEISESTI
-
-┌──────────────────────────────────────────────┐
-│       Tennis – vauhtia, taitoa ja taktiikkaa │
-│                                              │
-│  Tennis on mailapeli, jota voidaan pelata... │
-│  ...                                         │
-└──────────────────────────────────────────────┘
-
-
-┌──────────────────────────────────────────────┐
-│              Erilaiset tenniskentät          │
-│                                              │
-│              [ ISO TENNISKENTTÄKUVA ]        │
-│                                              │
-│        US Openin kova-alustainen kenttä...   │
-│                                              │
-│ ┌──────────┐ ┌──────────┐ ┌──────────┐       │
-│ │ 🎾 Kova  │ │ 🟠 Massa │ │ 🌱 Nurmi │       │
-│ │ alusta   │ │          │ │          │       │
-│ └──────────┘ └──────────┘ └──────────┘       │
-│                                              │
-│       [ Tutustu eri kenttätyyppeihin → ]     │
-└──────────────────────────────────────────────┘
-
-
-┌──────────────────────────────────────────────┐
-│         Mikä tekee tenniksestä               │
-│              kiinnostavaa?                   │
-│                                              │
-│              tekstiä...                      │
-└──────────────────────────────────────────────┘
-
-/* =========================================================
-   =========================================================
-   TENNIS 4 LIFE
-   MUIDEN SIVUJEN UUSI ULKOASU
-   =========================================================
-   ========================================================= */
-
-
-/* =========================================================
-   YLEINEN SISÄSIVUN TAUSTA
-   ========================================================= */
-
-body.inner-page {
-    margin: 0;
-    min-height: 100vh;
-
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(0, 110, 65, 0.45),
-            transparent 40%
-        ),
-        linear-gradient(
-            135deg,
-            #001f13,
-            #003d26 50%,
-            #001e12
-        );
-
-    color: white;
-}
-
-
-/* =========================================================
-   YLÄOSA
-   ========================================================= */
-
-.inner-header {
-    min-height: 245px;
-
-    box-sizing: border-box;
-
-    padding:
-        25px 20px 25px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(0, 70, 43, 0.98),
-            rgba(0, 43, 27, 0.98)
-        );
-
-    border-bottom:
-        1px solid rgba(255,255,255,0.18);
-
-    box-shadow:
-        0 10px 35px rgba(0,0,0,0.35);
-}
-
-
-/* =========================================================
-   HAKUKENTTÄ
-   ========================================================= */
-
-.inner-search {
-    position: relative;
-
-    width: min(480px, 90%);
-
-    margin-bottom: 22px;
-}
-
-
-.inner-search input {
-    width: 100%;
-
-    height: 48px;
-
-    box-sizing: border-box;
-
-    padding:
-        0 48px;
-
-    border:
-        2px solid rgba(255,255,255,0.35);
-
-    border-radius: 30px;
-
-    outline: none;
-
-    background:
-        rgba(255,255,255,0.96);
-
-    color: #003d26;
-
-    font-family:
-        "Goudy Old Style",
-        Georgia,
-        serif;
-
-    font-size: 17px;
-
-    box-shadow:
-        0 6px 25px rgba(0,0,0,0.35);
-
-    transition:
-        0.25s ease;
-}
-
-
-.inner-search input:focus {
-    border-color: #ffe600;
-
-    box-shadow:
-        0 0 20px rgba(255,230,0,0.3);
-}
-
-
-.search-icon {
-    position: absolute;
-
-    left: 16px;
-
-    top: 8px;
-
-    font-size: 25px;
-
-    color: #00643d;
-
-    z-index: 2;
-}
-
-
-.search-clear {
-    position: absolute;
-
-    right: 17px;
-
-    top: 10px;
-
-    font-size: 22px;
-
-    color: #00643d;
-
-    cursor: pointer;
-}
-
-
-/* =========================================================
-   TENNIS 4 LIFE
-   ========================================================= */
-
-.inner-logo {
-    font-family:
-        "Brush Script MT",
-        "Segoe Script",
-        cursive;
-
-    font-style: italic;
-
-    font-weight: bold;
-
-    font-size:
-        clamp(55px, 7vw, 95px);
-
-    line-height: 1;
-
-    color: #ffe600;
-
-    text-shadow:
-        3px 4px 0 #00351f,
-        5px 8px 15px rgba(0,0,0,0.75);
-
-    letter-spacing: 1px;
-}
-
-
-.inner-logo span {
-    color: white;
-
-    margin:
-        0 8px;
-}
-
-
-.inner-subtitle {
-    margin-top: 14px;
-
-    color:
-        rgba(255,255,255,0.65);
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 11px;
-
-    letter-spacing: 4px;
-}
-
-
-/* =========================================================
-   VASEN SIVUVALIKKO
-   ========================================================= */
-
-.inner-side-menu {
-    position: fixed;
-
-    left: 0;
-
-    top: 50%;
-
-    transform:
-        translateY(-50%);
-
-    width: 215px;
-
-    padding:
-        18px 12px;
-
-    box-sizing: border-box;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 7px;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(0,60,37,0.98),
-            rgba(0,31,19,0.98)
-        );
-
-    border:
-        1px solid rgba(255,255,255,0.18);
-
-    border-left: none;
-
-    border-radius:
-        0 25px 25px 0;
-
-    box-shadow:
-        5px 0 30px rgba(0,0,0,0.45);
-
-    z-index: 1000;
-}
-
-
-.side-heading {
-    padding:
-        5px 0 12px;
-
-    color: #ffe600;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 13px;
-
-    text-align: center;
-
-    letter-spacing: 2px;
-}
-
-
-.inner-side-menu a {
-    display: block;
-
-    padding:
-        11px 8px;
-
-    border:
-        1px solid transparent;
-
-    border-radius: 14px;
-
-    color: white !important;
-
-    font-family:
-        "Goudy Old Style",
-        Georgia,
-        serif;
-
-    font-size: 17px;
-
-    text-align: center;
-
-    text-decoration: none;
-
-    transition:
-        0.2s ease;
-}
-
-
-.inner-side-menu a:hover {
-    color: #003d26 !important;
-
-    background: #ffe600;
-
-    transform:
-        translateX(6px);
-
-    box-shadow:
-        0 5px 15px rgba(0,0,0,0.35);
-}
-
-
-.inner-side-menu a.current {
-    color: #ffe600 !important;
-
-    background:
-        rgba(255,230,0,0.10);
-
-    border:
-        1px solid rgba(255,230,0,0.7);
-
-    box-shadow:
-        inset 0 0 15px rgba(255,230,0,0.08);
-}
-
-
-/* =========================================================
-   PÄÄSISÄLTÖ
-   ========================================================= */
-
-.inner-main {
-    width:
-        min(1000px, calc(100% - 300px));
-
-    margin-left: 250px;
-
-    padding:
-        45px 20px 80px;
-
-    box-sizing: border-box;
-}
-
-
-/* =========================================================
-   SIVUN PÄÄOTSIKKO
-   ========================================================= */
-
-.page-heading {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 20px;
-
-    margin-bottom: 35px;
-
-    padding:
-        20px 25px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(0,85,50,0.95),
-            rgba(0,43,27,0.98)
-        );
-
-    border:
-        1px solid rgba(255,255,255,0.18);
-
-    border-radius: 25px;
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,0.35);
-}
-
-
-.page-heading h1 {
-    margin: 0;
-
-    padding: 0;
-
-    color: white;
-
-    background: none;
-
-    border: none;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size:
-        clamp(32px, 5vw, 55px);
-
-    text-shadow:
-        3px 4px 8px black;
-}
-
-
-.page-heading span {
-    font-size: 25px;
-}
-
-
-/* =========================================================
-   SISÄLTÖKORTTI
-   ========================================================= */
-
-.info-card {
-    margin-bottom: 30px;
-
-    padding:
-        35px;
-
-    box-sizing: border-box;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(0,74,45,0.92),
-            rgba(0,38,24,0.97)
-        );
-
-    border:
-        1px solid rgba(255,255,255,0.15);
-
-    border-radius: 28px;
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,0.35);
-
-    text-align: center;
-}
-
-
-.small-heading {
-    display: inline-block;
-
-    padding:
-        7px 15px;
-
-    margin-bottom: 8px;
-
-    color: #ffe600;
-
-    border:
-        1px solid rgba(255,230,0,0.4);
-
-    border-radius: 20px;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 12px;
-
-    letter-spacing: 1px;
-}
-
-
-.info-card h2 {
-    margin:
-        10px 0 20px;
-
-    padding: 0;
-
-    color: white;
-
-    background: none;
-
-    border: none;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size:
-        clamp(26px, 4vw, 42px);
-
-    text-shadow:
-        3px 4px 8px black;
-}
-
-
-.info-card p {
-    max-width: 850px;
-
-    margin:
-        15px auto;
-
-    color: rgba(255,255,255,0.92);
-
-    font-family:
-        "Goudy Old Style",
-        Georgia,
-        serif;
-
-    font-size: 20px;
-
-    line-height: 1.65;
-
-    text-align: center;
-}
-
-
-/* =========================================================
-   KUVA
-   ========================================================= */
-
-.main-image-box {
-    max-width: 900px;
-
-    margin:
-        30px auto;
-
-    padding: 14px;
-
-    box-sizing: border-box;
-
-    background:
-        rgba(0,20,12,0.6);
-
-    border:
-        1px solid rgba(255,255,255,0.15);
-
-    border-radius: 25px;
-
-    box-shadow:
-        0 10px 35px rgba(0,0,0,0.4);
-}
-
-
-.main-image-box img {
-    display: block;
-
-    width: 100%;
-
-    height: auto;
-
-    border-radius: 18px;
-
-    border:
-        2px solid rgba(255,255,255,0.4);
-
-    transition:
-        0.3s ease;
-}
-
-
-.main-image-box img:hover {
-    transform:
-        scale(1.015);
-}
-
-
-.image-caption {
-    margin-top: 13px;
-
-    color: white;
-
-    font-family:
-        "Goudy Old Style",
-        Georgia,
-        serif;
-
-    font-size: 16px;
-}
-
-
-.image-source {
-    margin-top: 5px;
-
-    color:
-        rgba(255,255,255,0.55);
-
-    font-size: 13px;
-}
-
-
-.image-source a {
-    color: #ffe600;
-}
-
-
-/* =========================================================
-   KENTTÄKORTIT
-   ========================================================= */
-
-.court-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 18px;
-
-    margin-top: 30px;
-}
-
-
-.court {
-    padding:
-        22px 18px;
-
-    background:
-        rgba(0,29,18,0.72);
-
-    border:
-        1px solid rgba(255,255,255,0.13);
-
-    border-radius: 22px;
-
-    transition:
-        0.25s ease;
-}
-
-
-.court:hover {
-    transform:
-        translateY(-7px);
-
-    border-color:
-        rgba(255,230,0,0.6);
-
-    box-shadow:
-        0 10px 25px rgba(0,0,0,0.35);
-}
-
-
-.court-top {
-    font-size: 38px;
-
-    margin-bottom: 5px;
-}
-
-
-.court h3 {
-    margin:
-        8px 0;
-
-    padding: 0;
-
-    color: #ffe600;
-
-    background: none;
-
-    border: none;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 21px;
-}
-
-
-.court p {
-    margin: 0;
-
-    font-size: 16px !important;
-
-    line-height: 1.5 !important;
-}
-
-
-/* =========================================================
-   KELTAINEN PAINIKE
-   ========================================================= */
-
-.yellow-button {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    margin-top: 18px;
-
-    padding:
-        13px 24px;
-
-    color: #003d26 !important;
-
-    background: #ffe600;
-
-    border-radius: 30px;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    text-decoration: none;
-
-    box-shadow:
-        0 7px 20px rgba(0,0,0,0.3);
-
-    transition:
-        0.2s ease;
-}
-
-
-.yellow-button:hover {
-    color: #003d26 !important;
-
-    background: white;
-
-    transform:
-        translateY(-3px);
-}
-
-
-.yellow-button span {
-    font-size: 20px;
-}
-
-
-/* =========================================================
-   TENNIS 4 LIFE - KOROSTUS
+   35. ERIKOISKORTTI
    ========================================================= */
 
 .special-card {
@@ -4065,198 +1626,266 @@ body.inner-page {
 }
 
 
-.tennis-quote {
-    max-width: 700px;
-
-    margin:
-        30px auto 5px;
-
-    padding:
-        18px 25px;
-
-    color: #ffe600;
-
-    border-left:
-        3px solid #ffe600;
-
-    border-right:
-        3px solid #ffe600;
-
-    border-radius: 18px;
-
-    font-family:
-        "Goudy Old Style",
-        Georgia,
-        serif;
-
-    font-size: 23px;
-
-    font-style: italic;
-}
-
-
 /* =========================================================
-   MUIDEN SIVUJEN LINKIT
+   36. FLEX
    ========================================================= */
 
-.other-pages {
+.flex-container,
+.flex-container1 {
+    width: 100%;
+
     display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 14px;
-}
-
-
-.other-pages a {
-    padding:
-        12px 20px;
-
-    color: white;
-
-    background:
-        rgba(0,45,27,0.8);
-
-    border:
-        1px solid rgba(255,255,255,0.25);
-
-    border-radius: 25px;
-
-    text-decoration: none;
-
-    transition:
-        0.2s ease;
-}
-
-
-.other-pages a:hover {
-    color: #003d26;
-
-    background: #ffe600;
-
-    transform:
-        translateY(-3px);
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-.inner-footer {
-    padding:
-        35px 20px;
-
-    background:
-        #00291a;
-
-    border-top:
-        1px solid rgba(255,255,255,0.15);
-
-    text-align: center;
-}
-
-
-.footer-buttons {
-    display: flex;
-
-    justify-content: center;
 
     align-items: center;
 
+    justify-content: center;
+
     flex-wrap: wrap;
 
-    gap: 12px;
-}
+    gap: 20px;
 
-
-.footer-buttons a {
-    padding:
-        11px 20px;
-
-    color: white;
-
-    background:
-        rgba(0,55,34,0.8);
-
-    border:
-        1px solid rgba(255,255,255,0.35);
-
-    border-radius: 30px;
-
-    font-family:
-        "Goudy Old Style",
-        Georgia,
-        serif;
-
-    font-size: 16px;
-
-    text-decoration: none;
-
-    transition:
-        0.2s ease;
-}
-
-
-.footer-buttons a:hover {
-    color: #003d26;
-
-    background: #ffe600;
-
-    transform:
-        translateY(-3px);
-}
-
-
-.footer-logo {
-    margin-top: 22px;
-
-    color:
-        rgba(255,255,255,0.65);
-
-    font-family:
-        "Brush Script MT",
-        cursive;
-
-    font-size: 27px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
 /* =========================================================
-   TABLETTI
+   37. FIXED OIKEALLA
+   ========================================================= */
+
+div.flex_fixed {
+    position: fixed;
+
+    right: 30px;
+    bottom: 30px;
+
+    width: 300px;
+
+    margin: 0;
+
+    z-index: 1000;
+
+    text-shadow:
+        3px 3px 6px #000;
+}
+
+
+/* =========================================================
+   38. TABLETTI
    ========================================================= */
 
 @media (max-width: 1100px) {
 
-    .inner-side-menu {
+    .inner-side-menu,
+    div.fixed {
         display: none;
+    }
+
+    .inner-main {
+        width: min(1000px, calc(100% - 30px));
+
+        margin: 0 auto;
+
+        padding:
+            35px 15px 60px;
+    }
+
+    .container {
+        width: min(950px, calc(100% - 30px));
+    }
+
+    .court-grid,
+    .court-types {
+        grid-template-columns: 1fr;
+    }
+
+    .alkuvalikko a.valikko1 {
+        font-size: 13px;
+
+        padding: 8px 13px;
+    }
+
+    p {
+        font-size: 19px;
+    }
+}
+
+
+/* =========================================================
+   39. PUHELIN
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding:
+            15px 12px 25px;
+    }
+
+
+    .logo {
+        width: 90%;
+
+        margin:
+            10px auto 18px;
+    }
+
+
+    .wrapper {
+        margin-bottom: 10px;
+    }
+
+
+    .search {
+        width: 92%;
+
+        height: 43px;
+
+        font-size: 14px;
+    }
+
+
+    .search-icon {
+        left: 7%;
+    }
+
+
+    .clear-icon {
+        left: auto;
+
+        right: 7%;
+    }
+
+
+    .alkuvalikko {
+        padding: 10px;
+
+        gap: 7px;
+    }
+
+
+    .alkuvalikko a.valikko1 {
+        width: 100%;
+
+        max-width: 400px;
+
+        min-height: 42px;
+
+        padding: 9px 12px;
+
+        font-size: 14px;
+    }
+
+
+    main {
+        padding:
+            25px 12px 60px;
+    }
+
+
+    .container {
+        width: 100%;
+
+        margin:
+            25px auto;
     }
 
 
     .inner-main {
         width: 100%;
 
-        margin-left: 0;
+        padding:
+            25px 12px 60px;
+    }
+
+
+    h1 {
+        width: 100%;
+
+        margin:
+            20px auto;
 
         padding:
-            35px 20px 60px;
+            18px 12px;
+
+        font-size: 2.2rem;
+
+        border-radius: 18px;
     }
 
 
-    .court-grid {
+    h2 {
+        width: 100%;
+
+        margin:
+            25px auto 18px;
+
+        padding:
+            14px 10px;
+
+        font-size: 1.7rem;
+
+        border-radius: 18px;
+    }
+
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+
+    p,
+    .info-card p,
+    .content-card p {
+        width: 100%;
+
+        font-size: 18px;
+
+        line-height: 1.55;
+    }
+
+
+    .content-card,
+    .info-card {
+        width: 100%;
+
+        padding:
+            25px 15px;
+
+        border-radius: 22px;
+    }
+
+
+    .image-card,
+    .main-image-box {
+        width: 100%;
+
+        padding: 10px;
+
+        border-radius: 20px;
+    }
+
+
+    .court-grid,
+    .court-types {
         grid-template-columns: 1fr;
+
+        gap: 14px;
     }
 
-}
+
+    .uusi {
+        width: min(400px, 100%);
+    }
 
 
-/* =========================================================
-   PUHELIN
-   ========================================================= */
+    .tennis-quote {
+        font-size: 19px;
 
-@media (max-width: 600px) {
+        padding:
+            15px;
+    }
+
 
     .inner-header {
         min-height: 220px;
@@ -4279,36 +1908,78 @@ body.inner-page {
 
 
     .page-heading {
-        gap: 8px;
-
         padding:
             17px 10px;
+
+        gap: 8px;
     }
 
 
     .page-heading h1 {
+        width: auto;
+
+        margin: 0;
+
+        padding: 0;
+
         font-size: 28px;
     }
 
 
-    .info-card {
-        padding:
-            25px 17px;
-    }
-
-
-    .info-card p {
-        font-size: 18px;
-    }
-
-
+    .footer-links,
     .footer-buttons {
         flex-direction: column;
     }
 
 
-    .footer-buttons a {
-        width: 80%;
+    .footer-buttons a,
+    .footer-links .foots {
+        width: min(350px, 90%);
     }
 
+
+    div.flex_fixed {
+        display: none;
+    }
+
+
+    footer,
+    .inner-footer {
+        margin-top: 40px;
+
+        padding:
+            25px 15px;
+    }
+}
+
+
+/* =========================================================
+   40. ERITTÄIN PIENI PUHELIN
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+
+    p {
+        font-size: 17px;
+    }
+
+
+    .inner-logo {
+        font-size: 45px;
+    }
+
+
+    .alkuvalikko a.valikko1 {
+        font-size: 13px;
+    }
 }
