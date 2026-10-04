@@ -1,6 +1,6 @@
 /* =========================================================
    TENNIS 4 LIFE
-   YHTEINEN / SIIVOTTU CSS
+   YHTEINEN / SIIVOTTU CSS (PÄIVITETTY)
    ========================================================= */
 
 
@@ -93,64 +93,32 @@ a:active {
 
 
 /* =========================================================
-   3. YHTEINEN HEADER
+   3. YHTEINEN HEADER (PÄIVITETTY ISOMMAKSI)
    ========================================================= */
-
-/*
-   Käytä HTML:ssä esimerkiksi:
-
-   <header class="site-header">
-       <div class="header-inner">
-
-           <a class="site-logo" href="index.html">
-               🎾 <b>Tennis</b> 4 Life
-           </a>
-
-           <nav class="main-nav">
-               <a href="index.html" class="active">Etusivu</a>
-               <a href="pelaajat.html">Pelaajat</a>
-               <a href="turnaukset.html">Turnaukset</a>
-               <a href="historia.html">Historia</a>
-           </nav>
-
-       </div>
-   </header>
-*/
-
 
 .site-header {
     position: relative;
     z-index: 1000;
-
     width: 100%;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(3, 31, 22, 0.98),
-            rgba(2, 24, 17, 0.98)
-        );
-
-    border-bottom:
-        1px solid rgba(255,255,255,0.12);
-
-    box-shadow:
-        0 5px 25px rgba(0,0,0,0.28);
+    background: linear-gradient(
+        180deg,
+        rgba(2, 24, 17, 0.99),
+        rgba(1, 15, 10, 0.99)
+    );
+    border-bottom: 2px solid rgba(217, 255, 79, 0.2);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
 }
 
 
 .header-inner {
-    width: min(1200px, calc(100% - 40px));
-    min-height: 82px;
-
+    width: min(1250px, calc(100% - 50px));
+    min-height: 95px; /* Reilusti korkeutta, tekee ilmava vaikutelman */
     margin: 0 auto;
-    padding: 12px 0;
-
+    padding: 15px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    gap: 35px;
+    gap: 40px;
 }
 
 
@@ -161,25 +129,17 @@ a:active {
 .site-logo {
     display: inline-flex;
     align-items: center;
-
-    gap: 9px;
-
+    gap: 12px;
     flex-shrink: 0;
-
     color: #fff !important;
-
     font-family:
         "Goudy Old Style",
         Georgia,
         serif;
-
-    font-size: 22px;
+    font-size: 26px; /* Hieman isompi ja näyttävämpi logo */
     font-weight: 700;
-
     line-height: 1;
-
     text-decoration: none;
-
     white-space: nowrap;
 }
 
@@ -194,167 +154,92 @@ a:active {
 
 
 /* =========================================================
-   5. PÄÄNAVIGAATIO
+   5. PÄÄNAVIGAATIO (PÄIVITETTY ISOMMAKSI JA SELKEÄMMÄKSI)
    ========================================================= */
 
 .main-nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-
-    gap: 5px;
-
+    gap: 15px; /* Reilut välit linkkien välillä */
     margin-left: auto;
 }
 
 
 .main-nav a {
     position: relative;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    min-height: 42px;
-
-    padding: 10px 15px;
-
-    color: #e9eee9 !important;
-
-    border:
-        1px solid transparent;
-
-    border-radius: 10px;
-
+    min-height: 48px;
+    padding: 12px 22px; /* Reilusti klikkaustilaa ympärille */
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
     font-family:
         "Courier New",
         monospace;
-
-    font-size: 14px;
-    font-weight: 600;
-
+    font-size: 16px; /* Selvästi isompi ja helppolukuinen tekstikoko */
+    font-weight: bold;
     text-decoration: none;
-
     white-space: nowrap;
+    transition: all 0.25s ease;
 }
 
 
 .main-nav a:hover {
-    color: #fff !important;
-
-    background:
-        rgba(255,255,255,0.08);
-
-    border-color:
-        rgba(255,255,255,0.10);
-
-    transform:
-        translateY(-2px);
+    color: #003d26 !important;
+    background: #d9ff4f; /* Muuttuu kirkkaan keltaiseksi hiiren alla */
+    border-color: #d9ff4f;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(217, 255, 79, 0.25);
 }
 
 
-/* aktiivinen */
+/* aktiivinen sivu */
 
 .main-nav a.active {
-    color: #07140f !important;
-
+    color: #003d26 !important;
     background: #d9ff4f;
-
     border-color: #d9ff4f;
-
     font-weight: 700;
-
-    box-shadow:
-        0 5px 16px rgba(0,0,0,0.25);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
 
 .main-nav a.active:hover {
-    color: #07140f !important;
-
+    color: #003d26 !important;
     background: #e6ff78;
-
-    transform:
-        translateY(-2px);
+    transform: translateY(-3px);
 }
 
 
-/* hover-alaviiva */
-
-.main-nav a:not(.active)::after {
-    content: "";
-
-    position: absolute;
-
-    left: 14px;
-    right: 14px;
-    bottom: 5px;
-
-    height: 2px;
-
-    background: #d9ff4f;
-
-    border-radius: 5px;
-
-    transform: scaleX(0);
-
-    transform-origin: center;
-
-    transition:
-        transform 0.2s ease;
-}
-
-.main-nav a:not(.active):hover::after {
-    transform: scaleX(1);
-}
+/* hover-alaviiva poistettu täältä, koska uudet napit toimivat hienosti laatikoina */
 
 
 /* =========================================================
    6. VANHA .ALKUVALIKKO
    ========================================================= */
 
-/*
-   Jos joissain vanhoissa HTML-tiedostoissa on:
-
-   <nav class="alkuvalikko">
-       <a class="valikko1">...</a>
-   </nav>
-
-   se toimii edelleen, mutta samalla tyylillä kuin uusi nav.
-*/
-
 .alkuvalikko {
     width: 100%;
-
-    min-height: 64px;
-
+    min-height: 75px;
     margin: 0;
-    padding: 9px 20px;
-
+    padding: 15px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-
     flex-wrap: wrap;
-
-    gap: 7px;
-
+    gap: 20px;
     background:
         linear-gradient(
             180deg,
             rgba(0,52,32,0.98),
             rgba(0,37,23,0.98)
         );
-
-    border-top:
-        1px solid rgba(255,255,255,0.08);
-
-    border-bottom:
-        1px solid rgba(255,255,255,0.12);
-
-    box-shadow:
-        0 6px 20px rgba(0,0,0,0.25);
-
+    border-bottom: 2px solid rgba(255,255,255,0.15);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
     position: relative;
     z-index: 900;
 }
@@ -362,48 +247,31 @@ a:active {
 
 .alkuvalikko a.valikko1 {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
-
-    min-height: 40px;
-
-    padding: 8px 15px;
-
+    min-height: 45px;
+    padding: 10px 20px;
     color: #fff !important;
-
-    background:
-        rgba(0,35,20,0.65);
-
-    border:
-        1px solid rgba(255,255,255,0.22);
-
+    background: rgba(0,35,20,0.75);
+    border: 1px solid rgba(255,255,255,0.25);
     border-radius: 22px;
-
     font-family:
         "Courier New",
         monospace;
-
-    font-size: 13px;
-
+    font-size: 16px;
+    font-weight: bold;
     text-decoration: none;
-
     white-space: nowrap;
+    transition: all 0.25s ease;
 }
 
 
 .alkuvalikko a.valikko1:hover {
     color: #003d26 !important;
-
     background: #d9ff4f;
-
     border-color: #d9ff4f;
-
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 7px 18px rgba(0,0,0,0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 18px rgba(0,0,0,0.35);
 }
 
 
@@ -411,31 +279,19 @@ a:active {
    7. VANHA HEADER
    ========================================================= */
 
-/*
-   Estetään vanhan header-tyylin sotkeminen uuden
-   .site-header-rakenteen kanssa.
-*/
-
 header:not(.site-header) {
     width: 100%;
-
     margin: 0;
     padding: 18px 20px 25px;
-
     text-align: center;
-
     background:
         linear-gradient(
             180deg,
             rgba(0,65,39,0.97),
             rgba(0,43,26,0.97)
         );
-
-    border-bottom:
-        1px solid rgba(255,255,255,0.12);
-
-    box-shadow:
-        0 8px 28px rgba(0,0,0,0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.3);
 }
 
 
@@ -445,20 +301,14 @@ header:not(.site-header) {
 
 .logo {
     display: block;
-
     width: min(500px, 85%);
-
     height: auto;
-
     margin: 10px auto 18px;
-
     object-fit: contain;
-
     filter:
         drop-shadow(
             0 8px 10px rgba(0,0,0,0.65)
         );
-
     transition:
         transform 0.3s ease,
         filter 0.3s ease;
@@ -466,7 +316,6 @@ header:not(.site-header) {
 
 .logo:hover {
     transform: scale(1.025);
-
     filter:
         drop-shadow(
             0 12px 18px rgba(0,0,0,0.8)
@@ -480,13 +329,9 @@ header:not(.site-header) {
 
 .wrapper {
     position: relative;
-
     width: 100%;
-
     margin: 0 auto 12px;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
 }
@@ -494,39 +339,25 @@ header:not(.site-header) {
 
 .search {
     display: block;
-
     width: min(380px, 90%);
     height: 44px;
-
-    padding:
-        8px 45px 8px 42px;
-
+    padding: 8px 45px 8px 42px;
     color: #003d26;
-
     background: #fff;
-
-    border:
-        2px solid rgba(0,80,50,0.65);
-
+    border: 2px solid rgba(0,80,50,0.65);
     border-radius: 30px;
-
     outline: none;
-
     font-family:
         "Goudy Old Style",
         Georgia,
         serif;
-
     font-size: 15px;
-
-    box-shadow:
-        0 5px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 
 
 .search:focus {
     border-color: #d9ff4f;
-
     box-shadow:
         0 0 0 3px rgba(217,255,79,0.18),
         0 5px 20px rgba(0,0,0,0.3);
@@ -535,44 +366,26 @@ header:not(.site-header) {
 
 .search-icon {
     position: absolute;
-
-    left:
-        calc(50% - min(190px, 45%) + 14px);
-
+    left: calc(50% - min(190px, 45%) + 14px);
     top: 50%;
-
     width: 17px;
     height: 17px;
-
-    transform:
-        translateY(-50%);
-
+    transform: translateY(-50%);
     z-index: 5;
-
     opacity: 0.75;
-
     pointer-events: none;
 }
 
 
 .clear-icon {
     position: absolute;
-
-    right:
-        calc(50% - min(190px, 45%) + 14px);
-
+    right: calc(50% - min(190px, 45%) + 14px);
     top: 50%;
-
     width: 16px;
     height: 16px;
-
-    transform:
-        translateY(-50%);
-
+    transform: translateY(-50%);
     cursor: pointer;
-
     visibility: hidden;
-
     opacity: 0.8;
 }
 
@@ -583,20 +396,14 @@ header:not(.site-header) {
 
 main {
     width: min(1200px, 100%);
-
     margin: 0 auto;
-
-    padding:
-        40px 25px 80px;
+    padding: 40px 25px 80px;
 }
 
 
 .container {
     width: min(1000px, 100%);
-
-    margin:
-        35px auto;
-
+    margin: 35px auto;
     text-align: center;
 }
 
@@ -615,133 +422,79 @@ h4 {
 
 h1 {
     width: min(1000px, 100%);
-
-    margin:
-        20px auto 30px;
-
-    padding:
-        22px 25px;
-
+    margin: 20px auto 30px;
+    padding: 22px 25px;
     color: #fff;
-
     background:
         linear-gradient(
             rgba(0,40,25,0.70),
             rgba(0,40,25,0.88)
         ),
         url("tenniskuvia/night.jpg");
-
     background-size: cover;
     background-position: center;
-
-    border:
-        1px solid rgba(255,255,255,0.18);
-
+    border: 1px solid rgba(255,255,255,0.18);
     border-radius: 24px;
-
     font-family:
         "Courier New",
         monospace;
-
-    font-size:
-        clamp(2.2rem, 5vw, 4.5rem);
-
+    font-size: clamp(2.2rem, 5vw, 4.5rem);
     line-height: 1.15;
-
     text-align: center;
-
-    text-shadow:
-        3px 4px 8px #000;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.35);
+    text-shadow: 3px 4px 8px #000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
 
 h2 {
     width: min(900px, 100%);
-
-    margin:
-        35px auto 20px;
-
-    padding:
-        15px 20px;
-
+    margin: 35px auto 20px;
+    padding: 15px 20px;
     color: #fff;
-
     background:
         linear-gradient(
             rgba(0,55,30,0.72),
             rgba(0,35,20,0.88)
         ),
         url("tenniskuvia/night.jpg");
-
     background-size: cover;
     background-position: center;
-
-    border:
-        1px solid rgba(255,255,255,0.16);
-
+    border: 1px solid rgba(255,255,255,0.16);
     border-radius: 20px;
-
     font-family:
         "Courier New",
         monospace;
-
-    font-size:
-        clamp(1.8rem, 4vw, 3rem);
-
+    font-size: clamp(1.8rem, 4vw, 3rem);
     line-height: 1.2;
-
     text-align: center;
-
-    text-shadow:
-        3px 3px 7px #000;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.28);
+    text-shadow: 3px 3px 7px #000;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.28);
 }
 
 
 h3 {
-    margin:
-        25px auto;
-
+    margin: 25px auto;
     color: #fff;
-
     font-family:
         "Courier New",
         monospace;
-
     font-size: 1.8rem;
-
     text-align: center;
-
-    text-shadow:
-        3px 3px 7px #000;
+    text-shadow: 3px 3px 7px #000;
 }
 
 
 h4 {
-    margin:
-        25px auto;
-
+    margin: 25px auto;
     color: #d9ff4f;
-
     font-family:
         "Brush Script MT",
         "Segoe Script",
         cursive;
-
-    font-size:
-        clamp(3rem, 7vw, 7rem);
-
+    font-size: clamp(3rem, 7vw, 7rem);
     font-style: italic;
-
     text-align: center;
-
-    text-shadow:
-        5px 8px 10px #000;
+    text-shadow: 5px 8px 10px #000;
 }
 
 
@@ -751,21 +504,12 @@ h4 {
 
 p {
     width: min(900px, 100%);
-
-    margin:
-        18px auto;
-
-    color:
-        rgba(255,255,255,0.94);
-
+    margin: 18px auto;
+    color: rgba(255,255,255,0.94);
     font-size: 20px;
-
     line-height: 1.7;
-
     text-align: center;
-
-    text-shadow:
-        2px 2px 5px rgba(0,0,0,0.65);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.65);
 }
 
 
@@ -775,22 +519,12 @@ p {
 
 .sammakko {
     display: block;
-
     width: min(680px, 100%);
-
-    margin:
-        30px auto;
-
-    border:
-        2px solid #037f92;
-
+    margin: 30px auto;
+    border: 2px solid #037f92;
     border-radius: 25px;
-
-    box-shadow:
-        0 0 40px 10px rgba(6,252,200,0.45);
-
-    transition:
-        transform 0.3s ease;
+    box-shadow: 0 0 40px 10px rgba(6,252,200,0.45);
+    transition: transform 0.3s ease;
 }
 
 .sammakko:hover {
@@ -800,20 +534,11 @@ p {
 
 .uusi {
     display: block;
-
     width: min(400px, 100%);
-
-    margin:
-        30px auto;
-
-    border:
-        3px double #1f7d43;
-
+    margin: 30px auto;
+    border: 3px double #1f7d43;
     border-radius: 30px;
-
-    box-shadow:
-        0 15px 60px rgba(0,0,0,0.75);
-
+    box-shadow: 0 15px 60px rgba(0,0,0,0.75);
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
@@ -821,9 +546,7 @@ p {
 
 .uusi:hover {
     transform: scale(1.03);
-
-    box-shadow:
-        0 20px 70px rgba(0,0,0,0.9);
+    box-shadow: 0 20px 70px rgba(0,0,0,0.9);
 }
 
 
@@ -833,17 +556,11 @@ p {
 .turnaus,
 .mailat {
     display: block;
-
     width: auto;
     max-width: 100%;
-
-    margin:
-        30px auto;
-
+    margin: 30px auto;
     height: auto;
-
     border-radius: 25px;
-
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
@@ -852,36 +569,27 @@ p {
 
 .tennisqva {
     border: 2px solid #80cfff;
-
-    box-shadow:
-        0 15px 45px rgba(0,81,153,0.55);
+    box-shadow: 0 15px 45px rgba(0,81,153,0.55);
 }
 
 
 .rafa {
     max-width: min(800px, 100%);
-
     border: 2px solid #4545c7;
-
-    box-shadow:
-        0 15px 50px rgba(0,0,120,0.55);
+    box-shadow: 0 15px 50px rgba(0,0,120,0.55);
 }
 
 
 .nuorena {
     border: 2px solid #779944;
-
-    box-shadow:
-        0 10px 45px rgba(150,145,80,0.45);
+    box-shadow: 0 10px 45px rgba(150,145,80,0.45);
 }
 
 
 .turnaus,
 .mailat {
     border: 2px solid #ff9d4d;
-
-    box-shadow:
-        0 15px 45px rgba(199,80,57,0.5);
+    box-shadow: 0 15px 45px rgba(199,80,57,0.5);
 }
 
 
@@ -900,26 +608,17 @@ p {
 
 figcaption {
     width: min(800px, 100%);
-
-    margin:
-        10px auto 30px;
-
-    color:
-        rgba(255,255,255,0.75);
-
+    margin: 10px auto 30px;
+    color: rgba(255,255,255,0.75);
     font-size: 17px;
-
     text-align: center;
 }
 
 
 .image-caption {
     margin-top: 15px;
-
     font-size: 17px;
-
     font-style: italic;
-
     text-align: center;
 }
 
@@ -927,12 +626,8 @@ figcaption {
 .image-source,
 .source-text {
     margin-top: 5px;
-
-    color:
-        rgba(255,255,255,0.55);
-
+    color: rgba(255,255,255,0.55);
     font-size: 13px;
-
     text-align: center;
 }
 
@@ -950,28 +645,17 @@ figcaption {
 .content-card,
 .info-card {
     width: min(1000px, 100%);
-
-    margin:
-        35px auto;
-
-    padding:
-        35px;
-
+    margin: 35px auto;
+    padding: 35px;
     background:
         linear-gradient(
             145deg,
             rgba(0,70,40,0.93),
             rgba(0,40,25,0.97)
         );
-
-    border:
-        1px solid rgba(255,255,255,0.17);
-
+    border: 1px solid rgba(255,255,255,0.17);
     border-radius: 28px;
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,0.35);
-
+    box-shadow: 0 12px 35px rgba(0,0,0,0.35);
     text-align: center;
 }
 
@@ -979,18 +663,11 @@ figcaption {
 .content-card h2,
 .info-card h2 {
     width: 100%;
-
-    margin:
-        0 0 20px;
-
+    margin: 0 0 20px;
     padding: 0;
-
     background: none;
-
     border: none;
-
     border-radius: 0;
-
     box-shadow: none;
 }
 
@@ -998,12 +675,8 @@ figcaption {
 .info-card p,
 .content-card p {
     width: min(850px, 100%);
-
-    margin:
-        15px auto;
-
+    margin: 15px auto;
     font-size: 20px;
-
     line-height: 1.65;
 }
 
@@ -1015,23 +688,12 @@ figcaption {
 .image-card,
 .main-image-box {
     width: min(900px, 100%);
-
-    margin:
-        30px auto;
-
+    margin: 30px auto;
     padding: 15px;
-
-    background:
-        rgba(0,20,12,0.6);
-
-    border:
-        1px solid rgba(255,255,255,0.15);
-
+    background: rgba(0,20,12,0.6);
+    border: 1px solid rgba(255,255,255,0.15);
     border-radius: 25px;
-
-    box-shadow:
-        0 10px 35px rgba(0,0,0,0.4);
-
+    box-shadow: 0 10px 35px rgba(0,0,0,0.4);
     text-align: center;
 }
 
@@ -1039,12 +701,8 @@ figcaption {
 .image-card img,
 .main-image-box img {
     width: 100%;
-
     margin: 0 auto;
-
-    border:
-        2px solid rgba(255,255,255,0.35);
-
+    border: 2px solid rgba(255,255,255,0.35);
     border-radius: 18px;
 }
 
@@ -1056,37 +714,21 @@ figcaption {
 .court-grid,
 .court-types {
     width: min(900px, 100%);
-
-    margin:
-        30px auto;
-
+    margin: 30px auto;
     display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
 }
 
 
 .court,
 .court-box {
-    padding:
-        22px 18px;
-
-    background:
-        rgba(0,29,18,0.75);
-
-    border:
-        1px solid rgba(255,255,255,0.14);
-
+    padding: 22px 18px;
+    background: rgba(0,29,18,0.75);
+    border: 1px solid rgba(255,255,255,0.14);
     border-radius: 22px;
-
     text-align: center;
-
-    box-shadow:
-        0 6px 18px rgba(0,0,0,0.25);
-
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
     transition:
         transform 0.25s ease,
         border-color 0.25s ease,
@@ -1096,24 +738,16 @@ figcaption {
 
 .court:hover,
 .court-box:hover {
-    transform:
-        translateY(-6px);
-
-    border-color:
-        rgba(217,255,79,0.65);
-
-    box-shadow:
-        0 10px 25px rgba(0,0,0,0.35);
+    transform: translateY(-6px);
+    border-color: rgba(217,255,79,0.65);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
 }
 
 
 .court h3,
 .court-box h3 {
-    margin:
-        8px 0;
-
+    margin: 8px 0;
     color: #d9ff4f;
-
     font-size: 21px;
 }
 
@@ -1121,18 +755,14 @@ figcaption {
 .court p,
 .court-box p {
     width: 100%;
-
     margin: 0;
-
     font-size: 16px !important;
-
     line-height: 1.5 !important;
 }
 
 
 .court-top {
     margin-bottom: 5px;
-
     font-size: 38px;
 }
 
@@ -1143,77 +773,45 @@ figcaption {
 
 .yellow-button {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
-
     gap: 10px;
-
-    margin:
-        18px auto 5px;
-
-    padding:
-        13px 24px;
-
+    margin: 18px auto 5px;
+    padding: 13px 24px;
     color: #003d26 !important;
-
     background: #d9ff4f;
-
     border: none;
-
     border-radius: 30px;
-
     font-family:
         "Courier New",
         monospace;
-
     font-size: 16px;
-
     font-weight: 700;
-
     text-decoration: none;
-
-    box-shadow:
-        0 7px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 7px 20px rgba(0,0,0,0.3);
 }
 
 
 .yellow-button:hover {
     color: #003d26 !important;
-
     background: #fff;
-
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 }
 
 
 .foots,
 .lisaa {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
-
     min-width: 180px;
-
     margin: 8px;
-
-    padding:
-        12px 25px;
-
+    padding: 12px 25px;
     color: #fff !important;
-
-    background:
-        rgba(0,55,30,0.85);
-
-    border:
-        1px solid rgba(255,255,255,0.5);
-
+    background: rgba(0,55,30,0.85);
+    border: 1px solid rgba(255,255,255,0.5);
     border-radius: 40px;
-
     text-decoration: none !important;
-
     font-size: 18px;
 }
 
@@ -1221,16 +819,10 @@ figcaption {
 .foots:hover,
 .lisaa:hover {
     color: #003d26 !important;
-
     background: #d9ff4f;
-
     border-color: #d9ff4f;
-
-    transform:
-        translateY(-4px);
-
-    box-shadow:
-        0 8px 20px rgba(0,0,0,0.45);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.45);
 }
 
 
@@ -1238,59 +830,33 @@ figcaption {
    19. SIVUVALIKKO
    ========================================================= */
 
-/*
-   Sivupalkki kelluu sivun päällä.
-   Se EI vie tilaa mainilta.
-*/
-
 div.fixed,
 .inner-side-menu {
     position: fixed;
-
     left: 0;
     top: 50%;
-
-    transform:
-        translateY(-50%);
-
+    transform: translateY(-50%);
     z-index: 1100;
-
     width: 205px;
-
-    padding:
-        14px 10px;
-
+    padding: 14px 10px;
     background:
         linear-gradient(
             180deg,
             rgba(0,60,37,0.98),
             rgba(0,31,19,0.98)
         );
-
-    border:
-        1px solid rgba(255,255,255,0.17);
-
+    border: 1px solid rgba(255,255,255,0.17);
     border-left: none;
-
-    border-radius:
-        0 22px 22px 0;
-
-    box-shadow:
-        5px 0 30px rgba(0,0,0,0.45);
-
+    border-radius: 0 22px 22px 0;
+    box-shadow: 5px 0 30px rgba(0,0,0,0.45);
     text-align: center;
 }
 
 
-/* vanha valikko */
-
 .valikko {
     display: flex;
-
     flex-direction: column;
-
     gap: 5px;
-
     width: 100%;
 }
 
@@ -1298,25 +864,14 @@ div.fixed,
 .fixed a,
 .inner-side-menu a {
     display: block;
-
     width: 100%;
-
-    padding:
-        10px 7px;
-
+    padding: 10px 7px;
     color: #fff !important;
-
     background: transparent;
-
-    border:
-        1px solid transparent;
-
+    border: 1px solid transparent;
     border-radius: 12px;
-
     font-size: 15px;
-
     text-decoration: none;
-
     transition:
         color 0.2s ease,
         background 0.2s ease,
@@ -1327,24 +882,16 @@ div.fixed,
 .fixed a:hover,
 .inner-side-menu a:hover {
     color: #003d26 !important;
-
     background: #d9ff4f;
-
-    transform:
-        translateX(4px);
+    transform: translateX(4px);
 }
 
 
 .inner-side-menu {
     width: 215px;
-
-    padding:
-        18px 12px;
-
+    padding: 18px 12px;
     display: flex;
-
     flex-direction: column;
-
     gap: 7px;
 }
 
@@ -1356,12 +903,8 @@ div.fixed,
 
 .inner-side-menu a.current {
     color: #d9ff4f !important;
-
-    background:
-        rgba(217,255,79,0.10);
-
-    border-color:
-        rgba(217,255,79,0.65);
+    background: rgba(217,255,79,0.10);
+    border-color: rgba(217,255,79,0.65);
 }
 
 
@@ -1371,12 +914,8 @@ div.fixed,
 
 .inner-main {
     width: min(1000px, calc(100% - 40px));
-
-    margin:
-        0 auto;
-
-    padding:
-        45px 20px 80px;
+    margin: 0 auto;
+    padding: 45px 20px 80px;
 }
 
 
@@ -1386,52 +925,32 @@ div.fixed,
 
 .page-heading {
     width: 100%;
-
-    margin:
-        0 auto 35px;
-
-    padding:
-        20px 25px;
-
+    margin: 0 auto 35px;
+    padding: 20px 25px;
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     gap: 20px;
-
     background:
         linear-gradient(
             135deg,
             rgba(0,85,50,0.95),
             rgba(0,43,27,0.98)
         );
-
-    border:
-        1px solid rgba(255,255,255,0.18);
-
+    border: 1px solid rgba(255,255,255,0.18);
     border-radius: 25px;
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,0.35);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.35);
 }
 
 
 .page-heading h1 {
     width: auto;
-
     margin: 0;
-
     padding: 0;
-
     background: none;
-
     border: none;
-
     box-shadow: none;
-
-    font-size:
-        clamp(30px, 5vw, 55px);
+    font-size: clamp(30px, 5vw, 55px);
 }
 
 
@@ -1446,50 +965,33 @@ div.fixed,
 
 .inner-header {
     min-height: 245px;
-
-    padding:
-        25px 20px;
-
+    padding: 25px 20px;
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
-
     text-align: center;
-
     background:
         linear-gradient(
             180deg,
             rgba(0,70,43,0.98),
             rgba(0,43,27,0.98)
         );
-
-    border-bottom:
-        1px solid rgba(255,255,255,0.18);
-
-    box-shadow:
-        0 10px 35px rgba(0,0,0,0.35);
+    border-bottom: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.35);
 }
 
 
 .inner-logo {
     color: #d9ff4f;
-
     font-family:
         "Brush Script MT",
         "Segoe Script",
         cursive;
-
     font-style: italic;
     font-weight: 700;
-
-    font-size:
-        clamp(55px, 7vw, 95px);
-
+    font-size: clamp(55px, 7vw, 95px);
     line-height: 1;
-
     text-shadow:
         3px 4px 0 #00351f,
         5px 8px 15px rgba(0,0,0,0.75);
@@ -1498,24 +1000,17 @@ div.fixed,
 
 .inner-logo span {
     color: #fff;
-
-    margin:
-        0 8px;
+    margin: 0 8px;
 }
 
 
 .inner-subtitle {
     margin-top: 14px;
-
-    color:
-        rgba(255,255,255,0.65);
-
+    color: rgba(255,255,255,0.65);
     font-family:
         "Courier New",
         monospace;
-
     font-size: 11px;
-
     letter-spacing: 4px;
 }
 
@@ -1526,44 +1021,27 @@ div.fixed,
 
 .inner-search {
     position: relative;
-
     width: min(480px, 90%);
-
-    margin:
-        0 auto 22px;
+    margin: 0 auto 22px;
 }
 
 
 .inner-search input {
     width: 100%;
-
     height: 48px;
-
-    padding:
-        0 48px;
-
+    padding: 0 48px;
     color: #003d26;
-
-    background:
-        rgba(255,255,255,0.96);
-
-    border:
-        2px solid rgba(255,255,255,0.35);
-
+    background: rgba(255,255,255,0.96);
+    border: 2px solid rgba(255,255,255,0.35);
     border-radius: 30px;
-
     outline: none;
-
     font-size: 17px;
-
-    box-shadow:
-        0 6px 25px rgba(0,0,0,0.35);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.35);
 }
 
 
 .inner-search input:focus {
     border-color: #d9ff4f;
-
     box-shadow:
         0 0 0 3px rgba(217,255,79,0.16),
         0 6px 25px rgba(0,0,0,0.35);
@@ -1576,27 +1054,14 @@ div.fixed,
 
 .tennis-quote {
     width: min(700px, 100%);
-
-    margin:
-        30px auto 5px;
-
-    padding:
-        18px 25px;
-
+    margin: 30px auto 5px;
+    padding: 18px 25px;
     color: #d9ff4f;
-
-    border-left:
-        3px solid #d9ff4f;
-
-    border-right:
-        3px solid #d9ff4f;
-
+    border-left: 3px solid #d9ff4f;
+    border-right: 3px solid #d9ff4f;
     border-radius: 18px;
-
     font-size: 23px;
-
     font-style: italic;
-
     text-align: center;
 }
 
@@ -1607,44 +1072,28 @@ div.fixed,
 
 .other-pages {
     display: flex;
-
     justify-content: center;
     align-items: center;
-
     flex-wrap: wrap;
-
     gap: 14px;
-
-    margin:
-        30px auto;
+    margin: 30px auto;
 }
 
 
 .other-pages a {
-    padding:
-        12px 20px;
-
+    padding: 12px 20px;
     color: #fff;
-
-    background:
-        rgba(0,45,27,0.8);
-
-    border:
-        1px solid rgba(255,255,255,0.25);
-
+    background: rgba(0,45,27,0.8);
+    border: 1px solid rgba(255,255,255,0.25);
     border-radius: 25px;
-
     text-decoration: none;
 }
 
 
 .other-pages a:hover {
     color: #003d26;
-
     background: #d9ff4f;
-
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 }
 
 
@@ -1655,17 +1104,11 @@ div.fixed,
 .flex-container,
 .flex-container1 {
     width: 100%;
-
-    margin:
-        0 auto;
-
+    margin: 0 auto;
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     flex-wrap: wrap;
-
     gap: 20px;
 }
 
@@ -1676,18 +1119,12 @@ div.fixed,
 
 div.flex_fixed {
     position: fixed;
-
     right: 30px;
     bottom: 30px;
-
     width: 300px;
-
     margin: 0;
-
     z-index: 1050;
-
-    text-shadow:
-        3px 3px 6px #000;
+    text-shadow: 3px 3px 6px #000;
 }
 
 
@@ -1702,9 +1139,7 @@ div.flex_fixed {
             rgba(0,88,50,0.95),
             rgba(0,40,25,0.98)
         );
-
-    border-color:
-        rgba(217,255,79,0.3);
+    border-color: rgba(217,255,79,0.3);
 }
 
 
@@ -1715,48 +1150,31 @@ div.flex_fixed {
 footer,
 .inner-footer {
     width: 100%;
-
     margin-top: 60px;
-
-    padding:
-        35px 20px;
-
-    background:
-        rgba(0,25,15,0.95);
-
-    border-top:
-        1px solid rgba(255,255,255,0.15);
-
+    padding: 35px 20px;
+    background: rgba(0,25,15,0.95);
+    border-top: 1px solid rgba(255,255,255,0.15);
     text-align: center;
-
-    box-shadow:
-        0 -5px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
 }
 
 
 .footer-links,
 .footer-buttons {
     display: flex;
-
     justify-content: center;
     align-items: center;
-
     flex-wrap: wrap;
-
     gap: 10px;
 }
 
 
 .footer-logo {
     margin-top: 22px;
-
-    color:
-        rgba(255,255,255,0.65);
-
+    color: rgba(255,255,255,0.65);
     font-family:
         "Brush Script MT",
         cursive;
-
     font-size: 27px;
 }
 
@@ -1767,52 +1185,34 @@ footer,
 
 @media (max-width: 1100px) {
 
-    /*
-       Sivupalkki pois, jotta sisältö ei mene ahtaaksi.
-    */
-
     div.fixed,
     .inner-side-menu {
         display: none;
     }
 
-
     .inner-main {
         width: min(1000px, calc(100% - 30px));
-
-        padding:
-            35px 15px 60px;
+        padding: 35px 15px 60px;
     }
-
 
     .container {
-        width:
-            min(950px, calc(100% - 30px));
+        width: min(950px, calc(100% - 30px));
     }
-
 
     .court-grid,
     .court-types {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-
     .header-inner {
-        width:
-            min(100% - 30px, 1200px);
-
+        width: min(100% - 30px, 1200px);
         gap: 20px;
     }
 
-
     .main-nav a {
-        padding:
-            9px 11px;
-
-        font-size: 13px;
+        padding: 9px 15px;
+        font-size: 14px;
     }
-
 
     p {
         font-size: 19px;
@@ -1828,44 +1228,28 @@ footer,
 
     .header-inner {
         width: 100%;
-
         min-height: auto;
-
-        padding:
-            16px 15px 14px;
-
+        padding: 16px 15px 14px;
         flex-direction: column;
-
         justify-content: center;
-
         gap: 15px;
     }
 
-
     .site-logo {
-        font-size: 21px;
+        font-size: 22px;
     }
-
 
     .main-nav {
         width: 100%;
-
         margin-left: 0;
-
         justify-content: center;
-
         flex-wrap: wrap;
-
-        gap: 6px;
+        gap: 8px;
     }
 
-
     .main-nav a {
-        min-height: 40px;
-
-        padding:
-            9px 12px;
-
+        min-height: 42px;
+        padding: 9px 14px;
         font-size: 13px;
     }
 }
@@ -1881,312 +1265,188 @@ footer,
         font-size: 16px;
     }
 
-
     .site-header {
         position: relative;
     }
 
-
     .header-inner {
-        padding:
-            15px 12px 12px;
+        padding: 15px 12px 12px;
     }
-
 
     .site-logo {
         font-size: 20px;
     }
 
-
-    /*
-       Ei enää rumaa 2-sarakkeista nappiruudukkoa.
-       Linkit menevät nätisti riveille.
-    */
-
     .main-nav {
         display: flex;
-
         width: 100%;
-
         justify-content: center;
-
         gap: 6px;
     }
 
-
     .main-nav a {
-        flex:
-            0 1 auto;
-
-        min-height: 39px;
-
-        padding:
-            8px 11px;
-
+        flex: 0 1 auto;
+        min-height: 40px;
+        padding: 8px 12px;
         font-size: 12px;
-
         border-radius: 9px;
     }
 
-
-    .main-nav a:not(.active)::after {
-        display: none;
-    }
-
-
     header:not(.site-header) {
-        padding:
-            15px 12px 22px;
+        padding: 15px 12px 22px;
     }
-
 
     .logo {
         width: 90%;
-
-        margin:
-            8px auto 16px;
+        margin: 8px auto 16px;
     }
-
 
     .wrapper {
         margin-bottom: 10px;
     }
 
-
     .search {
         width: 92%;
-
         height: 43px;
-
         font-size: 14px;
     }
-
 
     .search-icon {
         left: 7%;
     }
 
-
     .clear-icon {
         left: auto;
-
         right: 7%;
     }
 
-
     .alkuvalikko {
         padding: 9px 10px;
-
         gap: 6px;
     }
 
-
     .alkuvalikko a.valikko1 {
         width: auto;
-
         min-height: 40px;
-
-        padding:
-            8px 11px;
-
+        padding: 8px 11px;
         font-size: 12px;
     }
 
-
     main {
-        padding:
-            25px 12px 60px;
+        padding: 25px 12px 60px;
     }
-
 
     .container {
         width: 100%;
-
-        margin:
-            25px auto;
+        margin: 25px auto;
     }
-
 
     .inner-main {
         width: 100%;
-
-        padding:
-            25px 12px 60px;
+        padding: 25px 12px 60px;
     }
-
 
     h1 {
         width: 100%;
-
-        margin:
-            20px auto;
-
-        padding:
-            18px 12px;
-
-        font-size:
-            2.2rem;
-
-        border-radius:
-            18px;
+        margin: 20px auto;
+        padding: 18px 12px;
+        font-size: 2.2rem;
+        border-radius: 18px;
     }
-
 
     h2 {
         width: 100%;
-
-        margin:
-            25px auto 18px;
-
-        padding:
-            14px 10px;
-
-        font-size:
-            1.7rem;
-
-        border-radius:
-            18px;
+        margin: 25px auto 18px;
+        padding: 14px 10px;
+        font-size: 1.7rem;
+        border-radius: 18px;
     }
-
 
     h3 {
-        font-size:
-            1.4rem;
+        font-size: 1.4rem;
     }
-
 
     p,
     .info-card p,
     .content-card p {
         width: 100%;
-
-        font-size:
-            18px;
-
-        line-height:
-            1.55;
+        font-size: 18px;
+        line-height: 1.55;
     }
-
 
     .content-card,
     .info-card {
         width: 100%;
-
-        padding:
-            25px 15px;
-
-        border-radius:
-            22px;
+        padding: 25px 15px;
+        border-radius: 22px;
     }
-
 
     .image-card,
     .main-image-box {
         width: 100%;
-
-        padding:
-            10px;
-
-        border-radius:
-            20px;
+        padding: 10px;
+        border-radius: 20px;
     }
-
 
     .court-grid,
     .court-types {
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
         gap: 14px;
     }
 
-
     .uusi {
-        width:
-            min(400px, 100%);
+        width: min(400px, 100%);
     }
-
 
     .tennis-quote {
-        font-size:
-            19px;
-
-        padding:
-            15px;
+        font-size: 19px;
+        padding: 15px;
     }
-
 
     .inner-header {
-        min-height:
-            220px;
-
-        padding:
-            20px 15px;
+        min-height: 220px;
+        padding: 20px 15px;
     }
-
 
     .inner-logo {
-        font-size:
-            53px;
+        font-size: 53px;
     }
-
 
     .inner-subtitle {
-        font-size:
-            8px;
-
-        letter-spacing:
-            2px;
+        font-size: 8px;
+        letter-spacing: 2px;
     }
-
 
     .page-heading {
-        padding:
-            17px 10px;
-
-        gap:
-            8px;
+        padding: 17px 10px;
+        gap: 8px;
     }
-
 
     .page-heading h1 {
         width: auto;
-
         margin: 0;
-
         padding: 0;
-
-        font-size:
-            28px;
+        font-size: 28px;
     }
-
 
     .footer-links,
     .footer-buttons {
-        flex-direction:
-            column;
+        flex-direction: column;
     }
-
 
     .footer-buttons a,
     .footer-links .foots {
-        width:
-            min(350px, 90%);
+        width: min(350px, 90%);
     }
-
 
     div.flex_fixed {
         display: none;
     }
 
-
     footer,
     .inner-footer {
-        margin-top:
-            40px;
-
-        padding:
-            25px 15px;
+        margin-top: 40px;
+        padding: 25px 15px;
     }
 }
 
@@ -2201,68 +1461,32 @@ footer,
         font-size: 18px;
     }
 
-
     .main-nav {
         gap: 4px;
     }
 
-
     .main-nav a {
-        padding:
-            7px 9px;
-
-        font-size:
-            11px;
+        padding: 7px 9px;
+        font-size: 11px;
     }
-
 
     .alkuvalikko a.valikko1 {
-        font-size:
-            11px;
+        font-size: 11px;
     }
-
 
     h1 {
-        font-size:
-            1.9rem;
+        font-size: 1.9rem;
     }
-
 
     h2 {
-        font-size:
-            1.5rem;
+        font-size: 1.5rem;
     }
-
 
     p {
-        font-size:
-            17px;
+        font-size: 17px;
     }
-
 
     .inner-logo {
-        font-size:
-            45px;
+        font-size: 45px;
     }
 }
-
-
-/* =========================================================
-   34. ESTEETTÖMYYS / REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    html {
-        scroll-behavior: auto;
-    }
-
-    *,
-    *::before,
-    *::after {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-    }
-}
-```
