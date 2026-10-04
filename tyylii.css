@@ -1,6 +1,6 @@
 /* =========================================================
    TENNIS 4 LIFE
-   YHTEINEN / SIIVOTTU CSS (PÄIVITETTY)
+   YHTEINEN / SIIVOTTU CSS (LEVEÄ VALIKKO)
    ========================================================= */
 
 
@@ -93,7 +93,7 @@ a:active {
 
 
 /* =========================================================
-   3. YHTEINEN HEADER (PÄIVITETTY ISOMMAKSI)
+   3. YHTEINEN HEADER
    ========================================================= */
 
 .site-header {
@@ -111,8 +111,8 @@ a:active {
 
 
 .header-inner {
-    width: min(1250px, calc(100% - 50px));
-    min-height: 95px; /* Reilusti korkeutta, tekee ilmava vaikutelman */
+    width: min(1400px, calc(100% - 40px));
+    min-height: 90px;
     margin: 0 auto;
     padding: 15px 0;
     display: flex;
@@ -136,7 +136,7 @@ a:active {
         "Goudy Old Style",
         Georgia,
         serif;
-    font-size: 26px; /* Hieman isompi ja näyttävämpi logo */
+    font-size: 26px;
     font-weight: 700;
     line-height: 1;
     text-decoration: none;
@@ -154,14 +154,14 @@ a:active {
 
 
 /* =========================================================
-   5. PÄÄNAVIGAATIO (PÄIVITETTY ISOMMAKSI JA SELKEÄMMÄKSI)
+   5. PÄÄNAVIGAATIO (.main-nav)
    ========================================================= */
 
 .main-nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 15px; /* Reilut välit linkkien välillä */
+    gap: 20px;
     margin-left: auto;
 }
 
@@ -171,16 +171,16 @@ a:active {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 48px;
-    padding: 12px 22px; /* Reilusti klikkaustilaa ympärille */
+    min-height: 50px;
+    padding: 14px 26px;
     color: #ffffff !important;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 12px;
     font-family:
         "Courier New",
         monospace;
-    font-size: 16px; /* Selvästi isompi ja helppolukuinen tekstikoko */
+    font-size: 17px;
     font-weight: bold;
     text-decoration: none;
     white-space: nowrap;
@@ -190,14 +190,12 @@ a:active {
 
 .main-nav a:hover {
     color: #003d26 !important;
-    background: #d9ff4f; /* Muuttuu kirkkaan keltaiseksi hiiren alla */
+    background: #d9ff4f;
     border-color: #d9ff4f;
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(217, 255, 79, 0.25);
+    box-shadow: 0 6px 20px rgba(217, 255, 79, 0.3);
 }
 
-
-/* aktiivinen sivu */
 
 .main-nav a.active {
     color: #003d26 !important;
@@ -208,38 +206,29 @@ a:active {
 }
 
 
-.main-nav a.active:hover {
-    color: #003d26 !important;
-    background: #e6ff78;
-    transform: translateY(-3px);
-}
-
-
-/* hover-alaviiva poistettu täältä, koska uudet napit toimivat hienosti laatikoina */
-
-
 /* =========================================================
-   6. VANHA .ALKUVALIKKO
+   6. ERITTÄIN LEVEÄ .ALKUVALIKKO (Käytössä sivuillasi)
    ========================================================= */
 
 .alkuvalikko {
     width: 100%;
-    min-height: 75px;
-    margin: 0;
-    padding: 15px 20px;
+    max-width: 1450px; /* Tehty erittäin leveäksi */
+    min-height: 85px;
+    margin: 0 auto;
+    padding: 18px 25px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly; /* Levitetään napit tasaisesti koko leveydelle */
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 25px; /* Reilut välit nappien väliin */
     background:
         linear-gradient(
             180deg,
             rgba(0,52,32,0.98),
             rgba(0,37,23,0.98)
         );
-    border-bottom: 2px solid rgba(255,255,255,0.15);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    border-bottom: 2px solid rgba(255,255,255,0.18);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.3);
     position: relative;
     z-index: 900;
 }
@@ -249,20 +238,24 @@ a:active {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 45px;
-    padding: 10px 20px;
+    flex: 1 1 160px; /* Antaa napeille reilusti leveyttä ja joustavuutta */
+    max-width: 220px;
+    min-height: 50px;
+    padding: 14px 22px;
     color: #fff !important;
-    background: rgba(0,35,20,0.75);
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 22px;
+    background: rgba(0,35,20,0.85);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 14px; /* Muutettu siisteiksi laatikoiksi pyöristetyillä kulmilla */
     font-family:
         "Courier New",
         monospace;
-    font-size: 16px;
+    font-size: 17px; /* Isompi, selkeä fontti */
     font-weight: bold;
     text-decoration: none;
+    text-align: center;
     white-space: nowrap;
     transition: all 0.25s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 
@@ -271,7 +264,7 @@ a:active {
     background: #d9ff4f;
     border-color: #d9ff4f;
     transform: translateY(-3px);
-    box-shadow: 0 7px 18px rgba(0,0,0,0.35);
+    box-shadow: 0 8px 22px rgba(217, 255, 79, 0.35);
 }
 
 
@@ -1204,18 +1197,16 @@ footer,
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .header-inner {
-        width: min(100% - 30px, 1200px);
-        gap: 20px;
+    .alkuvalikko {
+        padding: 15px 15px;
+        gap: 15px;
     }
 
-    .main-nav a {
-        padding: 9px 15px;
-        font-size: 14px;
-    }
-
-    p {
-        font-size: 19px;
+    .alkuvalikko a.valikko1 {
+        flex: 1 1 130px;
+        min-height: 45px;
+        padding: 10px 15px;
+        font-size: 15px;
     }
 }
 
@@ -1226,28 +1217,15 @@ footer,
 
 @media (max-width: 800px) {
 
-    .header-inner {
+    .alkuvalikko {
         width: 100%;
-        min-height: auto;
-        padding: 16px 15px 14px;
-        flex-direction: column;
+        padding: 12px 10px;
+        gap: 10px;
         justify-content: center;
-        gap: 15px;
     }
 
-    .site-logo {
-        font-size: 22px;
-    }
-
-    .main-nav {
-        width: 100%;
-        margin-left: 0;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-
-    .main-nav a {
+    .alkuvalikko a.valikko1 {
+        flex: 0 1 auto;
         min-height: 42px;
         padding: 9px 14px;
         font-size: 13px;
@@ -1265,31 +1243,16 @@ footer,
         font-size: 16px;
     }
 
-    .site-header {
-        position: relative;
-    }
-
-    .header-inner {
-        padding: 15px 12px 12px;
-    }
-
-    .site-logo {
-        font-size: 20px;
-    }
-
-    .main-nav {
-        display: flex;
-        width: 100%;
-        justify-content: center;
+    .alkuvalikko {
+        padding: 10px 8px;
         gap: 6px;
     }
 
-    .main-nav a {
-        flex: 0 1 auto;
-        min-height: 40px;
-        padding: 8px 12px;
+    .alkuvalikko a.valikko1 {
+        min-height: 38px;
+        padding: 7px 10px;
         font-size: 12px;
-        border-radius: 9px;
+        border-radius: 10px;
     }
 
     header:not(.site-header) {
@@ -1318,18 +1281,6 @@ footer,
     .clear-icon {
         left: auto;
         right: 7%;
-    }
-
-    .alkuvalikko {
-        padding: 9px 10px;
-        gap: 6px;
-    }
-
-    .alkuvalikko a.valikko1 {
-        width: auto;
-        min-height: 40px;
-        padding: 8px 11px;
-        font-size: 12px;
     }
 
     main {
@@ -1457,21 +1408,9 @@ footer,
 
 @media (max-width: 380px) {
 
-    .site-logo {
-        font-size: 18px;
-    }
-
-    .main-nav {
-        gap: 4px;
-    }
-
-    .main-nav a {
-        padding: 7px 9px;
-        font-size: 11px;
-    }
-
     .alkuvalikko a.valikko1 {
         font-size: 11px;
+        padding: 6px 8px;
     }
 
     h1 {
